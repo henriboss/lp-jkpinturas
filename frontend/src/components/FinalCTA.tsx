@@ -24,7 +24,7 @@ const FinalCTA: React.FC = () => {
             <VerifiedIcon />
             Quiero mi presupuesto
           </a>
-          <a href="https://wa.me/595982518467" className="w-full md:w-auto bg-secondary text-on-background px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-secondary/90 hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+          <a href="https://wa.me/595982518467" className="w-full md:w-auto bg-whatsapp text-on-whatsapp px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-whatsapp/90 hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
             <PersonSearchIcon />
             Hablar con Asesor
           </a>

@@ -29,7 +29,9 @@ module.exports = {
         "surface-variant": "#dfe2ed",
         "on-surface-variant": "#434652",
         "outline": "#737783",
-        "outline-variant": "#c3c6d4"
+        "outline-variant": "#c3c6d4",
+        "whatsapp": "#25D366",
+        "on-whatsapp": "#ffffff"
       },
       borderRadius: {
         "DEFAULT": "0.25rem",
