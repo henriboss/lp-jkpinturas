@@ -83,7 +83,7 @@ const ProblemSolution: React.FC = () => {
           </div>
         </div>
         <div className="flex justify-center mt-12">
-          <a href="https://wa.me/595982518467" className="bg-whatsapp text-on-whatsapp px-8 py-4 rounded-md font-display text-button-text hover:bg-whatsapp/90 transition-all flex items-center justify-center gap-3 group shadow-md">
+          <a href="https://wa.me/595982518467" className="bg-whatsapp text-on-whatsapp px-8 py-5 rounded-md font-display text-button-text hover:bg-whatsapp/90 transition-all flex items-center justify-center gap-3 group shadow-md">
             <ChatIcon className="group-hover:rotate-12 transition-transform" />
             Quiero resolver esto definitivamente
           </a>

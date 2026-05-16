@@ -32,7 +32,7 @@ const CalculatorCTA: React.FC = () => {
                 </li>
               </ul>
             </div>
-            <a href="https://wa.me/595982518467" className="bg-whatsapp text-on-whatsapp px-14 py-6 rounded-md font-display text-xl shadow-xl hover:bg-whatsapp/90 hover:scale-[1.02] transition-all flex items-center justify-center gap-3 mx-auto">
+            <a href="https://wa.me/595982518467" className="bg-whatsapp text-on-whatsapp px-8 py-5 rounded-md font-display text-button-text hover:bg-whatsapp/90 hover:scale-[1.02] transition-all flex items-center justify-center gap-3 mx-auto">
               <FunctionsIcon />
               Calcular ahora gratis
             </a>
