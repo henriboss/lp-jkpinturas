@@ -35,7 +35,7 @@ const IdealCases: React.FC = () => {
 ))}
         </div>
         <div className="mt-16 text-center">
-          <a href="https://wa.me/595982518467" className="bg-whatsapp text-on-whatsapp px-6 py-5 rounded-md font-display text-button-text hover:bg-whatsapp/90 transition-all flex items-center justify-center gap-3 group shadow-md mx-auto">
+          <a href="https://wa.me/595982518467" className="bg-whatsapp text-on-whatsapp px-6 py-5 rounded-md font-display text-button-text hover:bg-whatsapp/90 transition-all inline-flex items-center justify-center gap-3 group shadow-md mx-auto">
             <ChatIcon className="group-hover:rotate-12 transition-transform" />
             Tengo uno de estos problemas
           </a>
