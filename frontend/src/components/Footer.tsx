@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
           
           <div className="md:col-span-2 flex flex-col gap-6">
             <h4 className="font-display text-sm uppercase tracking-[0.2em] text-secondary">Información</h4>
-            <ul className="space-y-4 font-body text-white/40 text-xs">
+            <ul className="space-y-4 font-body text-white/40 md:text-sm">
               <li><a className="hover:text-white transition-colors" href="#beneficios">Beneficios</a></li>
               <li><a className="hover:text-white transition-colors" href="#calculadora">Calculadora</a></li>
               <li><a className="hover:text-white transition-colors" href="#">Privacidad</a></li>
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
           
           <div className="md:col-span-2 flex flex-col gap-6">
             <h4 className="font-display text-sm uppercase tracking-[0.2em] text-secondary">Soporte</h4>
-            <ul className="space-y-4 font-body text-white/40 text-xs">
+            <ul className="space-y-4 font-body text-white/40 md:text-sm">
               <li><a className="hover:text-white transition-colors" href="#">Técnico</a></li>
               <li><a className="hover:text-white transition-colors" href="#">Garantías</a></li>
               <li><a className="hover:text-white transition-colors" href="#">Certificaciones</a></li>
@@ -55,26 +55,26 @@ const Footer: React.FC = () => {
                   <AlternateEmailIcon sx={{ fontSize: 18 }} />
                 </div>
                 <div className="flex flex-col min-w-0">
-                  <span className="text-[9px] font-tech text-white/30 uppercase tracking-tighter">Email Corporativo</span>
-                  <span className="text-xs font-bold tracking-tight truncate">contacto@jkpinturas.com</span>
+                  <span className="font-tech md:text-[10px] text-white/30 uppercase tracking-tighter">Email Corporativo</span>
+                  <span className="text-xs md:text-sm font-bold tracking-tight truncate">contacto@jkpinturas.com</span>
                 </div>
               </a>
 
               <div className="mt-8 flex items-center gap-3 border-t border-white/5 pt-5">
                 <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse shrink-0"></span>
-                <span className="text-[9px] font-tech text-white/30 uppercase tracking-widest">Respuesta en 24h hábiles</span>
+                <span className="font-tech md:text-[10px] text-white/30 uppercase tracking-widest">Respuesta en 24h hábiles</span>
               </div>
             </div>
           </div>
         </div>
         
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="font-tech text-[10px] text-white/30 uppercase tracking-[0.2em]">
+          <p className="font-tech md:text-xs text-white/30 uppercase tracking-[0.2em]">
             © 2024 JK Pinturas e Impermeabilizações - Duratec Goma Líquida.
           </p>
           <div className="flex items-center gap-4">
             <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
-            <p className="font-tech text-[10px] text-white/40 uppercase tracking-widest">
+            <p className="font-tech md:text-xs text-white/40 uppercase tracking-widest">
               Design 2.0 Premium Experience
             </p>
           </div>
