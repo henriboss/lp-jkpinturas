@@ -71,9 +71,7 @@ const Hero: React.FC = () => {
               <ChatIcon className="group-hover:rotate-12 transition-transform" />
               Solicitar asesoramiento ahora - WhatsApp
             </button>
-            <button className="bg-transparent border-2 border-primary text-primary px-12 py-5 rounded-md font-display text-button-text hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-2">
-              Ver Calculadora
-            </button>
+            
           </div>
         </div>
         <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
