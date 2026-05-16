@@ -1,0 +1,36 @@
+import NavBar from './components/NavBar';
+import Hero from './components/Hero';
+import SectionBullets from './components/SectionBullets';
+import ProblemSolution from './components/ProblemSolution';
+import ComparisonTable from './components/ComparisonTable';
+import Features from './components/Features';
+import TechnicalSpecs from './components/TechnicalSpecs';
+import IdealCases from './components/IdealCases';
+import CalculatorCTA from './components/CalculatorCTA';
+import FinalCTA from './components/FinalCTA';
+import Footer from './components/Footer';
+import { useScrollReveal } from './hooks/useScrollReveal';
+
+function App() {
+  useScrollReveal();
+
+  return (
+    <div className="min-h-screen">
+      <NavBar />
+      <main>
+        <Hero />
+        <SectionBullets />
+        <ProblemSolution />
+        <ComparisonTable />
+        <Features />
+        <TechnicalSpecs />
+        <IdealCases />
+        <CalculatorCTA />
+        <FinalCTA />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
