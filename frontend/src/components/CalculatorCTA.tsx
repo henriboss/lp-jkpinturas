@@ -32,10 +32,10 @@ const CalculatorCTA: React.FC = () => {
                 </li>
               </ul>
             </div>
-            <button className="bg-secondary text-on-background px-14 py-6 rounded-md font-display text-xl shadow-xl hover:bg-secondary/90 hover:scale-[1.02] transition-all flex items-center justify-center gap-3 mx-auto">
+            <a href="https://wa.me/595982518467" className="bg-secondary text-on-background px-14 py-6 rounded-md font-display text-xl shadow-xl hover:bg-secondary/90 hover:scale-[1.02] transition-all flex items-center justify-center gap-3 mx-auto">
               <FunctionsIcon />
               Calcular ahora gratis
-            </button>
+            </a>
           </div>
         </div>
       </div>

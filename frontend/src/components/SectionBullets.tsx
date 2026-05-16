@@ -41,10 +41,10 @@ const SectionBullets: React.FC = () => {
           </ul>
           
           <div className="mt-8 text-center">
-            <button className="bg-secondary text-white px-10 py-5 rounded-md font-display text-button-text hover:bg-secondary/90 transition-all flex items-center justify-center gap-3 group shadow-md mx-auto">
+            <a href="https://wa.me/595982518467" className="bg-secondary text-white px-10 py-5 rounded-md font-display text-button-text hover:bg-secondary/90 transition-all flex items-center justify-center gap-3 group shadow-md mx-auto">
               <ChatIcon className="group-hover:rotate-12 transition-transform" />
               Quiero saber cuánto necesito
-            </button>
+            </a>
             <p className="font-body text-sm text-on-surface-variant mt-4">
               Te respondemos rápido con recomendación y cantidad exacta para tu caso.
             </p>

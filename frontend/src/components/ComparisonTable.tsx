@@ -83,9 +83,9 @@ const ComparisonTable: React.FC = () => {
                 <span className="font-body font-bold text-base md:text-lg">Escudo Térmico Reflectante</span>
               </li>
             </ul>
-            <button className="w-full py-5 bg-primary text-white rounded-md font-display text-button-text hover:bg-deep-navy transition-all mt-6 shadow-lg shadow-primary/20">
+            <a href="https://wa.me/595982518467" className="w-full py-5 bg-primary text-white rounded-md font-display text-button-text hover:bg-deep-navy transition-all mt-6 shadow-lg shadow-primary/20 block text-center">
               Ver si es lo que necesito
-            </button>
+            </a>
           </div>
         </div>
       </div>

@@ -20,18 +20,18 @@ const FinalCTA: React.FC = () => {
           Respuesta rápida y sin compromiso.
         </p>
         <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
-          <button className="w-full md:w-auto bg-primary text-white px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-deep-navy hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+          <a href="https://wa.me/595982518467" className="w-full md:w-auto bg-primary text-white px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-deep-navy hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
             <VerifiedIcon />
             Quiero mi presupuesto
-          </button>
-          <button className="w-full md:w-auto bg-secondary text-on-background px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-secondary/90 hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+          </a>
+          <a href="https://wa.me/595982518467" className="w-full md:w-auto bg-secondary text-on-background px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-secondary/90 hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
             <PersonSearchIcon />
             Hablar con Asesor
-          </button>
-          <button className="w-full md:w-auto bg-industrial-red text-white px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-industrial-red/90 hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+          </a>
+          <a href="https://wa.me/595982518467" className="w-full md:w-auto bg-industrial-red text-white px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-industrial-red/90 hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
             <WaterDropIcon />
             Quiero solución para mi filtración
-          </button>
+          </a>
         </div>
       </div>
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-primary/5 to-transparent"></div>
