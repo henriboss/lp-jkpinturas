@@ -127,7 +127,7 @@ const Footer: React.FC = () => {
 
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="font-tech md:text-xs text-white/30 uppercase tracking-[0.2em]">
-            © 2026 JK Pinturas e Impermeabilizações - Duratec Goma Líquida.
+            © 2026 JK Pinturas e Impermeabilizaciones - Duratec Goma Líquida.
           </p>
           <div className="flex items-center gap-4">
             <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
