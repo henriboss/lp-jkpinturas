@@ -132,7 +132,7 @@ const Footer: React.FC = () => {
           <div className="flex items-center gap-4">
             <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
             <p className="font-tech md:text-xs text-white/40 uppercase tracking-widest">
-              Todos os direitos reservados a JK Pinturas
+              Todos los derechos reservados a JK Pinturas
             </p>
           </div>
         </div>
