@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
               <a className="w-10 h-10 rounded-sm border border-white/10 flex items-center justify-center hover:bg-secondary hover:text-on-background transition-all" href="#">
                 <ShareIcon sx={{ fontSize: 16 }} />
               </a>
-              <a className="w-10 h-10 rounded-sm border border-white/10 flex items-center justify-center hover:bg-secondary hover:text-on-background transition-all" href="#">
+              <a className="w-10 h-10 rounded-sm border border-white/10 flex items-center justify-center hover:bg-secondary hover:text-on-background transition-all" href="https://www.google.com/maps/place/JK+PINTURAS+S.A/@-25.4986263,-54.6675836,17z/data=!3m1!4b1!4m6!3m5!1s0x94f685bb21616507:0x6551cddcb8d89f6e!8m2!3d-25.4986312!4d-54.6650087!16s%2Fg%2F1pzr5_zl_?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
                 <LocationOnIcon sx={{ fontSize: 16 }} />
               </a>
             </div>
