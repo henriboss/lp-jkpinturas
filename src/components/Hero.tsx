@@ -3,11 +3,13 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ThermostatIcon from "@mui/icons-material/Thermostat";
 import ChatIcon from "@mui/icons-material/Chat";
 import { useGrapheneCanvas } from "../hooks/useGrapheneCanvas";
+import { useGTMEvent } from "../hooks/useGTMEvent";
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const { updateMouse } = useGrapheneCanvas(canvasRef);
+  const { trackWhatsAppClick } = useGTMEvent();
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (sectionRef.current) {
@@ -18,6 +20,10 @@ const Hero: React.FC = () => {
 
   const handleMouseLeave = () => {
     updateMouse(-1000, -1000);
+  };
+
+  const handleWhatsAppClick = () => {
+    trackWhatsAppClick('hero');
   };
 
   return (
@@ -82,6 +88,7 @@ const Hero: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-6 pt-6">
             <a
               href="https://wa.me/595982518467"
+              onClick={handleWhatsAppClick}
               className="bg-whatsapp text-on-whatsapp px-12 py-5 rounded-md font-display text-button-text hover:bg-whatsapp/90 transition-all flex items-center justify-center gap-3 group shadow-md"
             >
               <ChatIcon className="group-hover:rotate-12 transition-transform" />

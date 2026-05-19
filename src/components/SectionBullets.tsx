@@ -1,8 +1,14 @@
 import React from "react";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import ChatIcon from "@mui/icons-material/Chat";
+import { useGTMEvent } from "../hooks/useGTMEvent";
 
 const SectionBullets: React.FC = () => {
+  const { trackWhatsAppClick } = useGTMEvent();
+
+  const handleWhatsAppClick = () => {
+    trackWhatsAppClick('section_bullets');
+  };
   return (
     <section className="py-section-padding-desktop bg-surface-cream/30">
       <div className="max-w-container-max mx-auto px-gutter">
@@ -41,7 +47,7 @@ const SectionBullets: React.FC = () => {
           </ul>
           
           <div className="mt-8 text-center">
-            <a href="https://wa.me/595982518467" className="bg-whatsapp text-on-whatsapp px-10 py-5 rounded-md font-display text-button-text hover:bg-whatsapp/90 transition-all flex items-center justify-center gap-3 group shadow-md mx-auto">
+            <a href="https://wa.me/595982518467" onClick={handleWhatsAppClick} className="bg-whatsapp text-on-whatsapp px-10 py-5 rounded-md font-display text-button-text hover:bg-whatsapp/90 transition-all flex items-center justify-center gap-3 group shadow-md mx-auto">
               <ChatIcon className="group-hover:rotate-12 transition-transform" />
               Quiero saber cuánto necesito
             </a>

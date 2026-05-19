@@ -2,8 +2,14 @@ import React from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import CheckIcon from '@mui/icons-material/Check';
+import { useGTMEvent } from '../hooks/useGTMEvent';
 
 const ComparisonTable: React.FC = () => {
+  const { trackCTAClick } = useGTMEvent();
+
+  const handleCTAClick = () => {
+    trackCTAClick('comparison');
+  };
   return (
     <section className="bg-primary py-section-padding-mobile md:py-section-padding-desktop relative overflow-hidden" id="comparativo">
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
@@ -83,7 +89,7 @@ const ComparisonTable: React.FC = () => {
                 <span className="font-body font-bold text-base md:text-lg">Escudo Térmico Reflectante</span>
               </li>
             </ul>
-            <a href="https://wa.me/595982518467" className="w-full py-5 bg-primary text-white rounded-md font-display text-button-text hover:bg-deep-navy transition-all mt-6 shadow-lg shadow-primary/20 block text-center">
+            <a href="https://wa.me/595982518467" onClick={handleCTAClick} className="w-full py-5 bg-primary text-white rounded-md font-display text-button-text hover:bg-deep-navy transition-all mt-6 shadow-lg shadow-primary/20 block text-center">
               Ver si es lo que necesito
             </a>
           </div>

@@ -1,8 +1,14 @@
 import React from 'react';
 import CalculateIcon from '@mui/icons-material/Calculate';
 import FunctionsIcon from '@mui/icons-material/Functions';
+import { useGTMEvent } from '../hooks/useGTMEvent';
 
 const CalculatorCTA: React.FC = () => {
+  const { trackCTAClick } = useGTMEvent();
+
+  const handleCTAClick = () => {
+    trackCTAClick('calculator');
+  };
   return (
     <section className="py-section-padding-desktop bg-white overflow-hidden" id="calculadora">
       <div className="max-w-5xl mx-auto px-gutter scroll-reveal">
@@ -32,7 +38,7 @@ const CalculatorCTA: React.FC = () => {
                 </li>
               </ul>
             </div>
-            <a href="https://wa.me/595982518467" className="bg-whatsapp text-on-whatsapp px-8 py-5 rounded-md font-display text-button-text hover:bg-whatsapp/90 hover:scale-[1.02] transition-all flex items-center justify-center gap-3 mx-auto">
+            <a href="https://wa.me/595982518467" onClick={handleCTAClick} className="bg-whatsapp text-on-whatsapp px-8 py-5 rounded-md font-display text-button-text hover:bg-whatsapp/90 hover:scale-[1.02] transition-all flex items-center justify-center gap-3 mx-auto">
               <FunctionsIcon />
               Calcular ahora gratis
             </a>

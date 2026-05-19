@@ -2,8 +2,22 @@ import React from 'react';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
 import WaterDropIcon from '@mui/icons-material/WaterDrop';
+import { useGTMEvent } from '../hooks/useGTMEvent';
 
 const FinalCTA: React.FC = () => {
+  const { trackWhatsAppClick } = useGTMEvent();
+
+  const handlePresupuestoClick = () => {
+    trackWhatsAppClick('final_presupuesto');
+  };
+
+  const handleAsesorClick = () => {
+    trackWhatsAppClick('final_asesor');
+  };
+
+  const handleSolucionClick = () => {
+    trackWhatsAppClick('final_solucion');
+  };
   return (
     <section className="py-section-padding-desktop bg-surface-cream relative overflow-hidden" id="contato">
       <div className="max-w-container-max mx-auto px-gutter text-center relative z-10 scroll-reveal">
@@ -20,15 +34,15 @@ const FinalCTA: React.FC = () => {
           Respuesta rápida y sin compromiso.
         </p>
         <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
-          <a href="https://wa.me/595982518467" className="w-full md:w-auto bg-primary text-white px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-deep-navy hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+          <a href="https://wa.me/595982518467" onClick={handlePresupuestoClick} className="w-full md:w-auto bg-primary text-white px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-deep-navy hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
             <VerifiedIcon />
             Quiero mi presupuesto
           </a>
-          <a href="https://wa.me/595982518467" className="w-full md:w-auto bg-whatsapp text-on-whatsapp px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-whatsapp/90 hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+          <a href="https://wa.me/595982518467" onClick={handleAsesorClick} className="w-full md:w-auto bg-whatsapp text-on-whatsapp px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-whatsapp/90 hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
             <PersonSearchIcon />
             Hablar con Asesor
           </a>
-          <a href="https://wa.me/595982518467" className="w-full md:w-auto bg-industrial-red text-white px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-industrial-red/90 hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+          <a href="https://wa.me/595982518467" onClick={handleSolucionClick} className="w-full md:w-auto bg-industrial-red text-white px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-industrial-red/90 hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
             <WaterDropIcon />
             Quiero solución para mi filtración
           </a>

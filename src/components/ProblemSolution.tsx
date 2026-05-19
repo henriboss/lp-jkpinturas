@@ -5,8 +5,14 @@ import BrokenImageIcon from "@mui/icons-material/BrokenImage";
 import HomeIcon from "@mui/icons-material/Home";
 import WaterIcon from "@mui/icons-material/Water";
 import ChatIcon from "@mui/icons-material/Chat";
+import { useGTMEvent } from "../hooks/useGTMEvent";
 
 const ProblemSolution: React.FC = () => {
+  const { trackWhatsAppClick } = useGTMEvent();
+
+  const handleWhatsAppClick = () => {
+    trackWhatsAppClick('problem_solution');
+  };
   return (
     <section className="py-section-padding-desktop relative bg-white overflow-hidden">
       <div className="max-w-container-max mx-auto px-gutter">
@@ -83,7 +89,7 @@ const ProblemSolution: React.FC = () => {
           </div>
         </div>
         <div className="flex justify-center mt-12">
-          <a href="https://wa.me/595982518467" className="bg-whatsapp text-on-whatsapp px-8 py-5 rounded-md font-display text-button-text hover:bg-whatsapp/90 transition-all flex items-center justify-center gap-3 group shadow-md">
+          <a href="https://wa.me/595982518467" onClick={handleWhatsAppClick} className="bg-whatsapp text-on-whatsapp px-8 py-5 rounded-md font-display text-button-text hover:bg-whatsapp/90 transition-all flex items-center justify-center gap-3 group shadow-md">
             <ChatIcon className="group-hover:rotate-12 transition-transform" />
             Quiero resolver esto definitivamente
           </a>

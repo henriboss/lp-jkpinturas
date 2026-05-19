@@ -12,14 +12,19 @@ import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
 import SplashScreen from './components/SplashScreen';
 import { useScrollReveal } from './hooks/useScrollReveal';
+import { useGTMEvent } from './hooks/useGTMEvent';
+import { useScrollDepth } from './hooks/useScrollDepth';
 
 function App() {
   useScrollReveal();
   const [showSplash, setShowSplash] = useState(true);
+  const { trackEvent } = useGTMEvent();
 
   const handleLoaded = () => {
     setShowSplash(false);
   };
+
+  useScrollDepth(trackEvent);
 
   return (
     <>
