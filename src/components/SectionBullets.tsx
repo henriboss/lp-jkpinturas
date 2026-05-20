@@ -46,15 +46,15 @@ const SectionBullets: React.FC = () => {
             </li>
           </ul>
           
-          <div className="mt-8 text-center">
-            <a href="https://wa.me/595982518467" onClick={handleWhatsAppClick} className="bg-whatsapp text-on-whatsapp px-10 py-5 rounded-md font-display text-button-text hover:bg-whatsapp/90 transition-all flex items-center justify-center gap-3 group shadow-md mx-auto">
-              <ChatIcon className="group-hover:rotate-12 transition-transform" />
-              Quiero saber cuánto necesito
-            </a>
-            <p className="font-body text-sm text-on-surface-variant mt-4">
-              Te respondemos rápido con recomendación y cantidad exacta para tu caso.
-            </p>
-          </div>
+           <div className="mt-8 text-center">
+             <a href="https://wa.me/595983891601" onClick={handleWhatsAppClick} className="bg-whatsapp text-on-whatsapp px-10 py-5 rounded-md font-display text-button-text hover:bg-whatsapp/90 transition-all flex items-center justify-center gap-3 group shadow-md mx-auto">
+               <ChatIcon className="group-hover:rotate-12 transition-transform" />
+               Quiero saber cuánto necesito
+             </a>
+             <p className="font-body text-sm text-on-surface-variant mt-4">
+               Te respondemos rápido con recomendación y cantidad exacta para tu caso.
+             </p>
+           </div>
         </div>
       </div>
     </section>

@@ -33,20 +33,20 @@ const FinalCTA: React.FC = () => {
         <p className="font-body text-sm text-on-surface-variant mb-14">
           Respuesta rápida y sin compromiso.
         </p>
-        <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
-          <a href="https://wa.me/595982518467" onClick={handlePresupuestoClick} className="w-full md:w-auto bg-primary text-white px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-deep-navy hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
-            <VerifiedIcon />
-            Quiero mi presupuesto
-          </a>
-          <a href="https://wa.me/595982518467" onClick={handleAsesorClick} className="w-full md:w-auto bg-whatsapp text-on-whatsapp px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-whatsapp/90 hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
-            <PersonSearchIcon />
-            Hablar con Asesor
-          </a>
-          <a href="https://wa.me/595982518467" onClick={handleSolucionClick} className="w-full md:w-auto bg-industrial-red text-white px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-industrial-red/90 hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
-            <WaterDropIcon />
-            Quiero solución para mi filtración
-          </a>
-        </div>
+         <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
+           <a href="https://wa.me/595983891601" onClick={handlePresupuestoClick} className="w-full md:w-auto bg-primary text-white px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-deep-navy hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+             <VerifiedIcon />
+             Quiero mi presupuesto
+           </a>
+           <a href="https://wa.me/595983891601" onClick={handleAsesorClick} className="w-full md:w-auto bg-whatsapp text-on-whatsapp px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-whatsapp/90 hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+             <PersonSearchIcon />
+             Hablar con Asesor
+           </a>
+           <a href="https://wa.me/595983891601" onClick={handleSolucionClick} className="w-full md:w-auto bg-industrial-red text-white px-12 py-6 rounded-md font-display text-xl shadow-lg hover:bg-industrial-red/90 hover:-translate-y-1 transition-all flex items-center justify-center gap-3">
+             <WaterDropIcon />
+             Quiero solución para mi filtración
+           </a>
+         </div>
       </div>
       <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-primary/5 to-transparent"></div>
     </section>

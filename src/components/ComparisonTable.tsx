@@ -89,9 +89,9 @@ const ComparisonTable: React.FC = () => {
                 <span className="font-body font-bold text-base md:text-lg">Escudo Térmico Reflectante</span>
               </li>
             </ul>
-            <a href="https://wa.me/595982518467" onClick={handleCTAClick} className="w-full py-5 bg-primary text-white rounded-md font-display text-button-text hover:bg-deep-navy transition-all mt-6 shadow-lg shadow-primary/20 block text-center">
-              Ver si es lo que necesito
-            </a>
+             <a href="https://wa.me/595983891601" onClick={handleCTAClick} className="w-full py-5 bg-primary text-white rounded-md font-display text-button-text hover:bg-deep-navy transition-all mt-6 shadow-lg shadow-primary/20 block text-center">
+               Ver si es lo que necesito
+             </a>
           </div>
         </div>
       </div>
