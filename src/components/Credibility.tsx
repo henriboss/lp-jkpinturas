@@ -39,7 +39,7 @@ const Credibility: React.FC = () => {
           ))}
         </div>
         <div className="text-center mt-9">
-          <a href="#" className="btn-secondary">Ver Ficha Técnica</a>
+          <a href="#" className="btn-secondary">Ver Especificaciones Técnicas</a>
         </div>
       </div>
     </section>

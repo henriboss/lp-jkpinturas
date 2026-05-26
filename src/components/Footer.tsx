@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
             DURA<span className="text-primary">TEC</span>
           </div>
           <div className="flex gap-6 flex-wrap">
-            {['Ficha Técnica', 'Certificaciones', 'WhatsApp', 'Política Comercial', 'Contacto'].map((link) => (
+            {['Especificaciones Técnicas', 'Certificaciones', 'WhatsApp', 'Política Comercial', 'Contacto'].map((link) => (
               <a key={link} href="#" className="text-[#555] text-xs no-underline uppercase tracking-wider hover:text-primary transition-colors">
                 {link}
               </a>
