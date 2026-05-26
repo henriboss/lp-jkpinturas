@@ -1,12 +1,18 @@
 import React from 'react';
+import FormatPaint from '@mui/icons-material/FormatPaint';
+import Grain from '@mui/icons-material/Grain';
+import Settings from '@mui/icons-material/Settings';
+import TrendingDown from '@mui/icons-material/TrendingDown';
+import Thermostat from '@mui/icons-material/Thermostat';
+import MoneyOff from '@mui/icons-material/MoneyOff';
 
 const pains = [
-  { icon: '🎨', text: 'Pintura descascarándose y paredes con aspecto deteriorado' },
-  { icon: '🦠', text: 'Mohos y humedad comprometiendo salud y estructura' },
-  { icon: '🔩', text: 'Óxido en estructuras metálicas y componentes' },
-  { icon: '📉', text: 'Desgaste prematuro con retrabajo recurrente' },
-  { icon: '🌡️', text: 'Malestar térmico y mayor consumo de energía' },
-  { icon: '💸', text: 'Perjuicio estructural que solo crece con el tiempo' },
+  { icon: FormatPaint, text: 'Pintura descascarándose y paredes con aspecto deteriorado' },
+  { icon: Grain, text: 'Mohos y humedad comprometiendo salud y estructura' },
+  { icon: Settings, text: 'Óxido en estructuras metálicas y componentes' },
+  { icon: TrendingDown, text: 'Desgaste prematuro con retrabajo recurrente' },
+  { icon: Thermostat, text: 'Malestar térmico y mayor consumo de energía' },
+  { icon: MoneyOff, text: 'Perjuicio estructural que solo crece con el tiempo' },
 ];
 
 const PainBlock: React.FC = () => {
@@ -23,7 +29,7 @@ const PainBlock: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-[#1e1e1e] border border-[#1e1e1e]">
           {pains.map((pain) => (
             <div key={pain.text} className="bg-industrial-dark-2 p-5 flex items-start gap-3">
-              <span className="text-xl shrink-0 mt-0.5">{pain.icon}</span>
+              <pain.icon className="shrink-0 mt-0.5" sx={{ fontSize: 20 }} />
               <p className="text-sm text-[#ccc] leading-relaxed">{pain.text}</p>
             </div>
           ))}

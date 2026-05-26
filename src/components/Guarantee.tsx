@@ -1,5 +1,6 @@
 import React from 'react';
 import { useGTMEvent } from '../hooks/useGTMEvent';
+import ShieldOutlined from '@mui/icons-material/ShieldOutlined';
 
 const Guarantee: React.FC = () => {
   const { trackWhatsAppClick } = useGTMEvent();
@@ -8,7 +9,7 @@ const Guarantee: React.FC = () => {
     <section className="bg-industrial-dark py-section-padding">
       <div className="container-section">
         <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6 md:gap-10 items-center bg-industrial-dark-2 border border-[#2a2a2a] p-6 md:p-12">
-          <div className="text-[72px] opacity-80">🛡️</div>
+          <ShieldOutlined sx={{ fontSize: 72, opacity: 0.8 }} />
           <div>
             <h3 className="font-display text-[32px] font-black text-industrial-white mb-3">Compra técnica exige<br />soporte técnico.</h3>
             <p className="text-body-md text-[#888] leading-relaxed mb-6">

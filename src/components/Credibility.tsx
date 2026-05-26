@@ -1,14 +1,22 @@
 import React from 'react';
+import WbSunny from '@mui/icons-material/WbSunny';
+import Memory from '@mui/icons-material/Memory';
+import WaterDrop from '@mui/icons-material/WaterDrop';
+import Build from '@mui/icons-material/Build';
+import Sanitizer from '@mui/icons-material/Sanitizer';
+import Grain from '@mui/icons-material/Grain';
+import Timer from '@mui/icons-material/Timer';
+import Palette from '@mui/icons-material/Palette';
 
 const items = [
-  { icon: '☀️', title: 'Alta Resistencia UV', desc: 'Protección máxima contra radiación solar' },
-  { icon: '🔬', title: 'Nanotecnología', desc: 'Penetración profunda y adherencia superior' },
-  { icon: '🌊', title: 'Base Agua', desc: 'Fórmula sin olor fuerte, no tóxica' },
-  { icon: '⚡', title: 'Directo al Metal', desc: 'Sin necesidad de preparación especial' },
-  { icon: '🦠', title: 'Anti Bacterias', desc: 'Protege contra proliferación de microorganismos' },
-  { icon: '🍄', title: 'Anti Moho', desc: 'Inhibe el crecimiento de hongos en la superficie' },
-  { icon: '⏱️', title: 'Secado 72h', desc: 'Tiempo estimado para curado completo' },
-  { icon: '🎨', title: '6 Colores', desc: 'Blanco, Gris, Gris Plomo, Negro, Rojo, Verde' },
+  { icon: WbSunny, title: 'Alta Resistencia UV', desc: 'Protección máxima contra radiación solar' },
+  { icon: Memory, title: 'Nanotecnología', desc: 'Penetración profunda y adherencia superior' },
+  { icon: WaterDrop, title: 'Base Agua', desc: 'Fórmula sin olor fuerte, no tóxica' },
+  { icon: Build, title: 'Directo al Metal', desc: 'Sin necesidad de preparación especial' },
+  { icon: Sanitizer, title: 'Anti Bacterias', desc: 'Protege contra proliferación de microorganismos' },
+  { icon: Grain, title: 'Anti Moho', desc: 'Inhibe el crecimiento de hongos en la superficie' },
+  { icon: Timer, title: 'Secado 72h', desc: 'Tiempo estimado para curado completo' },
+  { icon: Palette, title: '6 Colores', desc: 'Blanco, Gris, Gris Plomo, Negro, Rojo, Verde' },
 ];
 
 const Credibility: React.FC = () => {
@@ -24,7 +32,7 @@ const Credibility: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#1a1a1a] border border-[#1a1a1a]">
           {items.map((item) => (
             <div key={item.title} className="bg-industrial-dark-2 p-7 pb-5 text-center">
-              <div className="text-[32px] mb-2.5">{item.icon}</div>
+              <div className="mb-2.5"><item.icon sx={{ fontSize: 32 }} /></div>
               <h4 className="font-display text-base font-extrabold text-primary mb-1">{item.title}</h4>
               <p className="text-xs text-[#666]">{item.desc}</p>
             </div>

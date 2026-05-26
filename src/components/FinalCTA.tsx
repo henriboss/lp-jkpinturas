@@ -1,5 +1,6 @@
 import React from 'react';
 import { useGTMEvent } from '../hooks/useGTMEvent';
+import WhatsApp from '@mui/icons-material/WhatsApp';
 
 const FinalCTA: React.FC = () => {
   const { trackWhatsAppClick } = useGTMEvent();
@@ -25,7 +26,7 @@ const FinalCTA: React.FC = () => {
             SOLICITAR PRESUPUESTO →
           </a>
           <div className="mt-6">
-            <a href="https://wa.me/595983891601" className="text-[#555] text-xs no-underline uppercase tracking-wider">💬 O hable por WhatsApp</a>
+            <a href="https://wa.me/595983891601" className="text-[#555] text-sm no-underline uppercase tracking-wider"><WhatsApp sx={{ fontSize: 16, verticalAlign: 'middle', mr: 0.3 }} /> O hable por WhatsApp</a>
           </div>
         </div>
       </section>

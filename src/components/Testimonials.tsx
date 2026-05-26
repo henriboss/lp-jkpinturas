@@ -13,6 +13,14 @@ const testimonials = [
     text: '"Producto con excelente acabado y performance en área externa. Recomiendo para cualquier profesional de la construcción."',
     author: 'Fernanda L. — Arquitecta',
   },
+  {
+    text: '"Lo usamos en toda la fachada de un edificio y el resultado superó expectativas. Fácil aplicación, sin olor y un acabado impecable."',
+    author: 'Sofía G. — Maestra Mayor de Obra',
+  },
+  {
+    text: '"Desde que usamos Duratec no volvimos a tener reclamos por filtraciones. Es el producto que recomendamos siempre."',
+    author: 'Miguel R. — Director de Obra',
+  },
 ];
 
 const Testimonials: React.FC = () => {
@@ -25,14 +33,16 @@ const Testimonials: React.FC = () => {
             Quien lo usa,<br /><span className="text-primary">lo recomienda.</span>
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#1a1a1a] border border-[#1a1a1a]">
-          {testimonials.map((t) => (
-            <div key={t.author} className="bg-industrial-dark-2 p-8 pb-7">
-              <div className="text-primary text-base tracking-wider mb-4">★★★★★</div>
-              <p className="text-[15px] text-[#ccc] leading-relaxed mb-5 italic">{t.text}</p>
-              <div className="font-display text-base font-bold uppercase tracking-wider text-[#777]">{t.author}</div>
-            </div>
-          ))}
+        <div className="overflow-hidden">
+          <div className="marquee-track">
+            {[...testimonials, ...testimonials].map((t, i) => (
+              <div key={i} className="w-[380px] shrink-0 bg-industrial-dark-2 p-8 pb-7 mx-[0.5px]">
+                <div className="text-primary text-base tracking-wider mb-4">★★★★★</div>
+                <p className="text-[15px] text-[#ccc] leading-relaxed mb-5 italic">{t.text}</p>
+                <div className="font-display text-base font-bold uppercase tracking-wider text-[#777]">{t.author}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
