@@ -1,48 +1,62 @@
-import React from 'react';
-import CalculateIcon from '@mui/icons-material/Calculate';
-import FunctionsIcon from '@mui/icons-material/Functions';
-import { useGTMEvent } from '../hooks/useGTMEvent';
+import React, { useState } from 'react';
 
 const CalculatorCTA: React.FC = () => {
-  const { trackCTAClick } = useGTMEvent();
+  const [area, setArea] = useState('');
+  const [result, setResult] = useState<{ kg: string; baldes18: number; baldes36: number } | null>(null);
 
-  const handleCTAClick = () => {
-    trackCTAClick('calculator');
+  const calcular = () => {
+    const num = parseFloat(area);
+    if (!num || num <= 0) {
+      alert('Por favor, ingrese un área válida en m².');
+      return;
+    }
+    const kg = (num * 0.6).toFixed(1);
+    const baldes18 = Math.ceil((num * 0.6) / 16);
+    const baldes36 = Math.ceil((num * 0.6) / 3.2);
+    setResult({ kg, baldes18, baldes36 });
   };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') calcular();
+  };
+
   return (
-    <section className="py-section-padding-desktop bg-white overflow-hidden" id="calculadora">
-      <div className="max-w-5xl mx-auto px-gutter scroll-reveal">
-        <div className="bg-primary rounded-lg p-10 lg:p-24 relative overflow-hidden flex flex-col items-center text-center">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white/5 to-transparent"></div>
-          <div className="absolute -top-24 -right-24 w-64 h-64 bg-secondary/10 blur-[100px]"></div>
-          <div className="relative z-10 max-w-2xl">
-            <CalculateIcon sx={{ fontSize: 80 }} className="text-secondary mb-10 block mx-auto opacity-80" />
-            <h2 className="font-display text-4xl lg:text-6xl text-white mb-8 leading-tight">Optimiza tu inversión</h2>
-            <p className="font-body text-white/70 text-lg mb-8 leading-relaxed">
-              Evitá desperdicios o falta de material. Nuestro equipo técnico realiza el cálculo exacto según tu tipo de superficie y estado estructural.
-            </p>
-            <div className="mb-14 text-left mx-auto max-w-sm">
-              <p className="font-body text-white/80 text-base mb-4">Indicá el área aproximada y te decimos:</p>
-              <ul className="space-y-2">
-                <li className="flex items-center gap-3 text-white/70">
-                  <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                  Cuántos kilos usar
-                </li>
-                <li className="flex items-center gap-3 text-white/70">
-                  <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                  Cuántas capas aplicar
-                </li>
-                <li className="flex items-center gap-3 text-white/70">
-                  <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                  Cómo lograr el mejor resultado
-                </li>
-              </ul>
-            </div>
-             <a href="https://wa.me/595983891601" onClick={handleCTAClick} className="bg-whatsapp text-on-whatsapp px-8 py-5 rounded-md font-display text-button-text hover:bg-whatsapp/90 hover:scale-[1.02] transition-all flex items-center justify-center gap-3 mx-auto">
-               <FunctionsIcon />
-               Calcular ahora gratis
-             </a>
+    <section className="bg-industrial-dark py-section-padding" id="calculadora">
+      <div className="container-section">
+        <div className="text-center mb-[50px]">
+          <div className="section-label">Calculadora</div>
+          <h2 className="text-display-section text-industrial-white font-black mt-3">
+            Descubra cuánto<br /><span className="text-primary">necesita.</span>
+          </h2>
+        </div>
+        <div className="max-w-[600px] mx-auto bg-industrial-dark-2 border border-[#2a2a2a] p-6 md:p-12">
+          <h3 className="font-display text-[28px] font-black text-industrial-white mb-2">Calcule su necesidad</h3>
+          <p className="text-sm text-[#666] mb-7">Ingrese el área total a impermeabilizar</p>
+          <div className="flex mb-5 min-w-0">
+            <input
+              type="number"
+              value={area}
+              onChange={(e) => setArea(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="Ej: 50"
+              min="1"
+              className="flex-1 bg-industrial-black border border-[#333] border-r-0 text-industrial-white font-display text-2xl font-bold px-5 py-4 outline-none"
+            />
+            <div className="bg-[#1e1e1e] border border-[#333] text-[#666] font-display text-base font-bold px-5 py-4 uppercase tracking-wider">m²</div>
           </div>
+          <button onClick={calcular} className="w-full bg-primary text-on-primary font-display font-black text-xl uppercase tracking-wider py-4 hover:bg-industrial-yellow-bright transition-colors border-none cursor-pointer">
+            CALCULAR AHORA →
+          </button>
+          {result && (
+            <div className="mt-5 p-5 bg-industrial-black border border-[#2a2a2a]">
+              <div className="text-xs uppercase tracking-wider text-[#666] mb-2">Estimación para su área</div>
+              <div className="font-display text-4xl font-black text-primary mb-3">{result.kg} kg de Goma Líquida</div>
+              <div className="text-sm text-[#aaa]">
+                Equivale a aproximadamente <strong>{result.baldes18} balde(s) de 18L</strong> o <strong>{result.baldes36} lata(s) de 3,6L</strong>.<br />
+                <a href="https://wa.me/595983891601" className="text-primary font-semibold no-underline">Solicitar presupuesto personalizado →</a>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

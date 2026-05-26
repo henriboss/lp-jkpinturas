@@ -26,13 +26,17 @@ export const useGrapheneCanvas = (canvasRef: React.RefObject<HTMLCanvasElement |
   const hexagons = useRef<Hexagon[]>([]);
   const mousePos = useRef({ x: -1000, y: -1000 });
   const animationFrame = useRef<number>(0);
-  const lastMouseMoveTime = useRef<number>(Date.now());
+  const lastMouseMoveTime = useRef<number>(0);
   const isActive = useRef<boolean>(false);
+  const animateRef = useRef<() => void>(() => {});
+
+  useEffect(() => {
+    lastMouseMoveTime.current = Date.now();
+  }, []);
 
   const initHexagons = useCallback((width: number, height: number) => {
     const hexes: Hexagon[] = [];
     const hexHeight = HEX_RADIUS * 1.5;
-    
     const cols = Math.ceil(width / SPACING) + 2;
     const rows = Math.ceil(height / hexHeight) + 2;
 
@@ -41,16 +45,10 @@ export const useGrapheneCanvas = (canvasRef: React.RefObject<HTMLCanvasElement |
         const offset = row % 2 === 0 ? 0 : SPACING / 2;
         const x = col * SPACING + offset;
         const y = row * hexHeight;
-        
         hexes.push({
-          originalX: x,
-          originalY: y,
-          x: x,
-          y: y,
-          vx: 0,
-          vy: 0,
-          alpha: 0,
-          targetAlpha: 0,
+          originalX: x, originalY: y,
+          x, y, vx: 0, vy: 0,
+          alpha: 0, targetAlpha: 0,
         });
       }
     }
@@ -70,7 +68,6 @@ export const useGrapheneCanvas = (canvasRef: React.RefObject<HTMLCanvasElement |
 
     const grayValue = 100 + (alpha * 80);
     const strokeColor = `rgba(${grayValue}, ${grayValue}, ${grayValue + 10}, ${alpha})`;
-    
     ctx.strokeStyle = strokeColor;
     ctx.lineWidth = 1.5;
     ctx.stroke();
@@ -86,13 +83,11 @@ export const useGrapheneCanvas = (canvasRef: React.RefObject<HTMLCanvasElement |
   const animate = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-    
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Check if mouse is idle
     const timeSinceMove = Date.now() - lastMouseMoveTime.current;
     isActive.current = timeSinceMove < IDLE_TIMEOUT;
 
@@ -100,8 +95,7 @@ export const useGrapheneCanvas = (canvasRef: React.RefObject<HTMLCanvasElement |
       const dx = hex.originalX - mousePos.current.x;
       const dy = hex.originalY - mousePos.current.y;
       const dist = Math.sqrt(dx * dx + dy * dy);
-      
-      // Calculate target alpha based on mouse position
+
       let baseAlpha = 0;
       if (dist < CLOSE_THRESHOLD) {
         baseAlpha = 0.8 + (1 - dist / CLOSE_THRESHOLD) * 0.2;
@@ -109,63 +103,53 @@ export const useGrapheneCanvas = (canvasRef: React.RefObject<HTMLCanvasElement |
         const ratio = (dist - CLOSE_THRESHOLD) / (MEDIUM_THRESHOLD - CLOSE_THRESHOLD);
         baseAlpha = 0.8 - ratio * 0.7;
       }
-      
-      // If mouse is idle, fade out
+
       if (!isActive.current) {
         hex.targetAlpha = Math.max(hex.targetAlpha - FADE_SPEED, 0);
       } else {
         hex.targetAlpha = baseAlpha;
       }
-      
-      // Apply spring force (return to original position)
+
       const springX = (hex.originalX - hex.x) * SPRING_STRENGTH;
       const springY = (hex.originalY - hex.y) * SPRING_STRENGTH;
-      
-      // Apply mouse influence (pull effect)
+
       if (dist < INFLUENCE_RADIUS) {
         const influence = 1 - (dist / INFLUENCE_RADIUS);
         const pullStrength = influence * influence * MAX_DISPLACEMENT;
-        
         const dirX = dx / dist || 0;
         const dirY = dy / dist || 0;
-        
         hex.vx += dirX * pullStrength * 0.1;
         hex.vy += dirY * pullStrength * 0.1;
       }
-      
-      // Apply spring force
+
       hex.vx += springX;
       hex.vy += springY;
-      
-      // Apply damping
       hex.vx *= DAMPING;
       hex.vy *= DAMPING;
-      
-      // Update position
       hex.x += hex.vx;
       hex.y += hex.vy;
-      
-      // Smooth alpha transition
       hex.alpha += (hex.targetAlpha - hex.alpha) * 0.12;
-      
+
       if (hex.alpha > 0.01) {
         drawHexagon(ctx, hex.x, hex.y, HEX_RADIUS, hex.alpha);
       }
     });
-    
-    animationFrame.current = requestAnimationFrame(animate);
+
+    animationFrame.current = requestAnimationFrame(() => animateRef.current?.());
   }, [canvasRef, drawHexagon]);
+
+  useEffect(() => {
+    animateRef.current = animate;
+  }, [animate]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
     const rect = canvas.getBoundingClientRect();
     canvas.width = rect.width;
     canvas.height = rect.height;
-    
     initHexagons(rect.width, rect.height);
-    animate();
+    animateRef.current?.();
 
     return () => {
       cancelAnimationFrame(animationFrame.current);

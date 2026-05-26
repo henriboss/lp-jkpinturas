@@ -1,18 +1,32 @@
 import React from 'react';
+import { useGTMEvent } from '../hooks/useGTMEvent';
 
 const NavBar: React.FC = () => {
+  const { trackWhatsAppClick } = useGTMEvent();
+
+  const handleCTA = () => {
+    trackWhatsAppClick('nav');
+  };
+
   return (
-    <header className="glass-nav fixed top-0 left-0 right-0 z-[100]">
-      <nav className="flex justify-center items-center px-gutter py-4 max-w-container-max mx-auto w-full">
-        <div className="flex items-center">
-          <img 
-            alt="JK Pinturas Logo" 
-            className="h-9 lg:h-11" 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmzdEHb4mrxNAVFzlIVJodJGqR8lQroMtlfLonlSYoJAom_vJc4vZ9VYWuk8Hs9D2V2zNLiaNH2iPYFhdDY11pXyUPsOKP1tK6f39U3lNLc97IPShefFYEdak9YFX4y8VoF-KyXzJLYhy7g15rFMZZH92wCaUm_veEgrqenYM4TI4PjEf5jDC6FWrdfOzS9CJOvQos-rwCZVsPaXbxYLAtKGSh1P-ZdK0l-dE54fKMQKQE4L6SsLd8lfQDDOfP8RzrH31qp5Y3Dno" 
-          />
+    <>
+      <nav className="bg-industrial-black border-b border-[#222] sticky top-0 z-50">
+        <div className="max-w-container-max mx-auto px-gutter flex items-center justify-between py-3.5">
+          <div className="font-display text-[28px] font-black uppercase tracking-wider text-industrial-white">
+            DURA<span className="text-primary">TEC</span>
+          </div>
+          <a
+            href="https://wa.me/595983891601"
+            onClick={handleCTA}
+            className="bg-primary text-on-primary font-display font-extrabold text-sm uppercase tracking-wider px-5.5 py-2.5 hover:bg-industrial-yellow-bright transition-colors"
+            style={{ padding: '10px 22px', fontSize: '14px', letterSpacing: '1px' }}
+          >
+            Solicitar Presupuesto →
+          </a>
         </div>
       </nav>
-    </header>
+      <div className="stripe-bar" />
+    </>
   );
 };
 

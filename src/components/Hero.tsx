@@ -1,9 +1,7 @@
-import React, { useRef } from "react";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import ThermostatIcon from "@mui/icons-material/Thermostat";
-import ChatIcon from "@mui/icons-material/Chat";
-import { useGrapheneCanvas } from "../hooks/useGrapheneCanvas";
-import { useGTMEvent } from "../hooks/useGTMEvent";
+import React, { useRef } from 'react';
+import { useGrapheneCanvas } from '../hooks/useGrapheneCanvas';
+import { useGTMEvent } from '../hooks/useGTMEvent';
+import gomaImg from '../assets/goma-2.png';
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -22,103 +20,83 @@ const Hero: React.FC = () => {
     updateMouse(-1000, -1000);
   };
 
-  const handleWhatsAppClick = () => {
-    trackWhatsAppClick('hero');
+  const handleOrcamento = () => {
+    trackWhatsAppClick('hero_orcamento');
+  };
+
+  const handleCalculadora = () => {
+    trackWhatsAppClick('hero_calculadora');
   };
 
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[90vh] flex items-center pt-24 lg:pt-32 pb-24 lg:pb-0 overflow-hidden bg-surface-cream/30"
+      className="bg-industrial-dark relative overflow-hidden py-[80px] pb-[60px]"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Graphene Canvas Layer - Behind content */}
       <canvas
         ref={canvasRef}
-        className="graphene-canvas"
-        style={{ zIndex: 1 }}
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        style={{ zIndex: 0 }}
       />
-
-      {/* Background Animated Liquid Blobs */}
-      <div className="absolute top-0 left-0 w-full h-full -z-0 pointer-events-none">
-        <div className="absolute top-[5%] -left-[10%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/20 blur-[80px] md:blur-[100px] liquid-blob"></div>
-        <div
-          className="absolute bottom-[-10%] -right-[10%] w-[400px] md:w-[700px] h-[400px] md:h-[700px] bg-secondary/15 blur-[100px] md:blur-[120px] liquid-blob"
-          style={{ animationDelay: "-6s" }}
-        ></div>
-      </div>
-
-      <div className="max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
-        <div
-          className="lg:col-span-7 flex flex-col gap-8 lg:gap-10 scroll-reveal"
-          id="hero-content"
-        >
-          <div className="technical-badge self-start">Tecnología Duratec</div>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-display-lg text-primary leading-[1.15] tracking-tight">
-            Impermeabilización <br className="hidden sm:block" />
-            <span className="text-deep-navy">
-              <u>definitiva</u>
-            </span>{" "}
-            con goma líquida de alta resistencia
-          </h1>
-          <p className="font-body text-body-md md:text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
-            Solución profesional para filtraciones en losas, techos, paredes y
-            superficies difíciles. Membrana elástica que sella de raíz y resiste
-            sol, lluvia y movimiento estructural.
-          </p>
-          <p className="font-body text-sm text-on-surface-variant">
-            Te respondemos rápido con recomendación y cantidad exacta para tu
-            caso.
-          </p>
-          <div className="flex flex-wrap gap-8 items-center">
-            <div className="flex items-center gap-3 bg-white px-5 py-3 rounded-md industrial-border">
-              <CheckCircleIcon className="text-primary scale-110" />
-              <span className="font-tech text-label-tech text-on-surface">
-                30 MPa Resistencia
-              </span>
-            </div>
-            <div className="flex items-center gap-3 bg-white px-5 py-3 rounded-md industrial-border">
-              <ThermostatIcon className="text-primary scale-110" />
-              <span className="font-tech text-label-tech text-on-surface">
-                -30% Reducción Térmica
-              </span>
-            </div>
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_80%_50%,rgba(212,196,23,0.07)_0%,transparent_70%)] pointer-events-none" />
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-[60px] items-center max-w-container-max mx-auto px-gutter relative z-10">
+        <div className="hero-content">
+          <div className="inline-block bg-primary text-on-primary font-display text-xs font-black uppercase tracking-wider px-3 py-1 mb-5">
+            Goma Líquida · Base Agua · Nanotecnología
           </div>
-          <div className="flex flex-col sm:flex-row gap-6 pt-6">
-           <a
-             href="https://wa.me/595983891601"
-             onClick={handleWhatsAppClick}
-             className="bg-whatsapp text-on-whatsapp px-12 py-5 rounded-md font-display text-button-text hover:bg-whatsapp/90 transition-all flex items-center justify-center gap-3 group shadow-md"
-           >
-              <ChatIcon className="group-hover:rotate-12 transition-transform" />
-              Solicitar asesoramiento ahora - WhatsApp
+          <h1 className="text-display-hero text-industrial-white mb-3">
+            Acabe con las<br />infiltraciones con<br /><em className="text-primary not-italic">una única solución.</em>
+          </h1>
+          <p className="font-body text-body-lg text-[#aaa] leading-relaxed mb-7 max-w-[520px]">
+            La Goma Líquida Duratec crea una membrana flexible de alta protección contra agua, sol e intemperie — ideal para techos, paredes, metales, cerámicas, vidrios y más.
+          </p>
+          <ul className="list-none flex flex-wrap gap-x-[18px] gap-y-2 mb-9">
+            {['Impermeabiliza y protege', 'Alta resistencia UV y lluvia', 'Múltiples superficies', 'Base agua, sin olor fuerte', 'Flexible, lavable y durable', 'Anti moho y anti bacterias'].map((item) => (
+              <li key={item} className="text-sm font-semibold text-industrial-white flex items-center gap-1.5 before:content-['✓'] before:text-industrial-green before:font-black before:text-base">
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div className="flex gap-3.5 flex-wrap items-center">
+            <a href="https://wa.me/595983891601" onClick={handleOrcamento} className="btn-primary">
+              Solicitar Presupuesto →
+            </a>
+            <a href="#calculadora" onClick={handleCalculadora} className="btn-secondary">
+              Calcular cuánto necesito
             </a>
           </div>
+          <p className="mt-6 text-xs text-[#666] uppercase tracking-wider">
+            Más protección · Menos retrabajo · Menos mantenimiento
+          </p>
         </div>
-        <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
-          <div className="relative w-full max-w-lg mb-12 lg:mb-0">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-primary/5 rounded-full blur-[100px] -z-10"></div>
+        <div className="bg-industrial-dark-2 border border-[#2a2a2a] p-9 pb-6 text-center hidden lg:block">
+          <div className="bg-industrial-dark border-b border-[#222] px-4 py-3 text-left -mt-9 -mx-6 mb-6">
+            <span className="font-display text-[11px] font-bold uppercase tracking-wider text-[#555]">Goma Líquida · 16kg</span>
+          </div>
+          <div className="relative w-full max-w-[280px] mx-auto">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-primary/5 rounded-full blur-[100px] -z-10" />
             <img
               alt="Balde Duratec Goma Líquida"
-              className="w-full h-auto drop-shadow-2xl floating relative z-10"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB03EIWYF2G0JwLE5QzQzU4V5j4_jNAo6zkaMPqIGBAUGk3LoYrRK6ATc45H2dAsM_uqdfD274jQU3b6qTmkulMzNCsGEZFDEofguqPBQE6z0cWKZNhPkrQ8e1Sp2A6mgvRfTTRgsK5Jw2oy55V_zqkvv4STvZMXawYzAac8qnFGavZqUK9RsDPg_d_ec2WO9OH95iip-lwcjp6P3r9YtiZorgMRCOltcske6p1WiYzMkAA4mt2rXX8IgDHt5JXNLgZBSDNcZPkWPU"
+              className="w-full h-auto drop-shadow-2xl animate-float relative z-10"
+              src={gomaImg}
             />
-            <div className="absolute bottom-0 lg:-bottom-10 lg:-left-16 glass-card p-8 rounded-lg z-20 max-w-[260px] shadow-2xl">
-              <p className="font-tech text-[10px] text-primary mb-2 uppercase tracking-widest">
-                Durabilidad Industrial
-              </p>
-              <p className="font-display text-5xl text-on-surface mb-2"></p>
-              <p className="font-body text-body-md text-on-surface-variant leading-tight"></p>
-            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-px mt-5 bg-[#2a2a2a] border-t border-[#2a2a2a]">
+            {[
+              { label: 'Acabado', value: 'Satinado' },
+              { label: 'Secado', value: '72 horas' },
+              { label: 'Tecnología', value: 'Nano' },
+              { label: 'Contenido', value: '3,6L / 18L' },
+            ].map((spec) => (
+              <div key={spec.label} className="bg-industrial-dark-2 px-3 py-2.5 text-left">
+                <div className="text-[10px] uppercase tracking-wider text-[#666]">{spec.label}</div>
+                <div className="font-display text-base font-bold text-primary">{spec.value}</div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 opacity-30">
-        <span className="text-[10px] uppercase tracking-[0.2em] font-tech text-on-surface">
-          Precision Focus
-        </span>
-        <div className="w-px h-16 bg-gradient-to-b from-primary to-transparent"></div>
       </div>
     </section>
   );

@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duratec Goma Líquida — Impermeabilização</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --dark: #111111;
+    --dark2: #1a1a1a;
+    --yellow: #D4C417;
+    --yellow-bright: #f0dd1e;
+    --green: #7ABF2E;
+    --white: #f5f5f0;
+    --gray: #888;
+    --gray-light: #ccc;
+    --stripe: repeating-linear-gradient(
+      -45deg,
+      #D4C417 0px,
+      #D4C417 8px,
+      #000 8px,
+      #000 18px
+    );
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── UTILITIES ─── */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  .yellow { color: var(--yellow); }
+  .green { color: var(--green); }
+
+  h1, h2, h3, h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  /* ─── STRIPE ACCENT ─── */
+  .stripe-bar {
+    height: 12px;
+    background: var(--stripe);
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    background: var(--black);
+    border-bottom: 1px solid #222;
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  nav .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--white);
+  }
+
+  .logo span { color: var(--yellow); }
+
+  nav .cta-nav {
+    background: var(--yellow);
+    color: #000;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 22px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--dark);
+    position: relative;
+    overflow: hidden;
+    padding: 80px 0 60px;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 50%;
+    height: 100%;
+    background: radial-gradient(ellipse at 80% 50%, rgba(212,196,23,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 60px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .hero-label {
+    display: inline-block;
+    background: var(--yellow);
+    color: #000;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 6vw, 76px);
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+  }
+
+  .hero h1 em {
+    color: var(--yellow);
+    font-style: normal;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: #aaa;
+    line-height: 1.7;
+    margin-bottom: 28px;
+    max-width: 520px;
+  }
+
+  .hero-bullets {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin-bottom: 36px;
+  }
+
+  .hero-bullets li {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hero-bullets li::before {
+    content: '✓';
+    color: var(--green);
+    font-weight: 900;
+    font-size: 16px;
+  }
+
+  .cta-group {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-primary {
+    background: var(--yellow);
+    color: #000;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 16px 32px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--yellow-bright); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--yellow);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px 28px;
+    border: 1.5px solid var(--yellow);
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.15s;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(212,196,23,0.1);
+  }
+
+  .hero-tagline {
+    margin-top: 24px;
+    font-size: 13px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  /* ─── PRODUCT IMAGE CARD ─── */
+  .hero-visual {
+    background: var(--dark2);
+    border: 1px solid #2a2a2a;
+    padding: 36px 24px;
+    position: relative;
+    text-align: center;
+  }
+
+  .product-img {
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .specs-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin-top: 20px;
+    background: #2a2a2a;
+    border-top: 1px solid #2a2a2a;
+  }
+
+  .spec-item {
+    background: var(--dark2);
+    padding: 10px 12px;
+    text-align: left;
+  }
+
+  .spec-item .label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+  }
+
+  .spec-item .value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--yellow);
+  }
+
+  /* ─── BLOCO DOR ─── */
+  .pain {
+    background: #0d0d0d;
+    padding: 80px 0;
+    border-top: 1px solid #1e1e1e;
+  }
+
+  .pain h2 {
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 900;
+    margin-bottom: 10px;
+    color: var(--white);
+  }
+
+  .pain h2 em {
+    color: var(--yellow);
+    font-style: normal;
+  }
+
+  .pain-intro {
+    font-size: 17px;
+    color: #888;
+    margin-bottom: 40px;
+    max-width: 560px;
+  }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: #1e1e1e;
+    border: 1px solid #1e1e1e;
+  }
+
+  .pain-item {
+    background: var(--dark2);
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .pain-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .pain-item p {
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.5;
+  }
+
+  .pain-cta {
+    margin-top: 40px;
+    padding: 20px 28px;
+    background: rgba(212,196,23,0.07);
+    border-left: 3px solid var(--yellow);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  /* ─── APLICAÇÕES ─── */
+  .aplicacoes {
+    padding: 80px 0;
+    background: var(--dark);
+  }
+
+  .section-head {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-label {
+    display: inline-block;
+    border: 1px solid #333;
+    color: #777;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 4px 14px;
+    margin-bottom: 14px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 900;
+    color: var(--white);
+  }
+
+  .apps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #222;
+    border: 1px solid #222;
+  }
+
+  .app-card {
+    background: var(--dark2);
+    padding: 28px 24px;
+    position: relative;
+    transition: background 0.15s;
+  }
+
+  .app-card:hover { background: #1e1e1e; }
+
+  .app-card::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 3px;
+    background: var(--yellow);
+    margin-bottom: 16px;
+  }
+
+  .app-card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .app-card p {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.6;
+  }
+
+  .app-card .app-emoji {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 28px;
+    opacity: 0.4;
+  }
+
+  /* ─── COMPARATIVO ─── */
+  .comparativo {
+    padding: 80px 0;
+    background: var(--black);
+  }
+
+  .comp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    font-family: 'Barlow', sans-serif;
+  }
+
+  .comp-table th {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 18px 24px;
+    text-align: left;
+    border-bottom: 2px solid #222;
+  }
+
+  .comp-table th:last-child {
+    color: var(--yellow);
+    background: rgba(212,196,23,0.05);
+    border-bottom-color: var(--yellow);
+  }
+
+  .comp-table td {
+    padding: 16px 24px;
+    border-bottom: 1px solid #1a1a1a;
+    font-size: 15px;
+    color: #aaa;
+  }
+
+  .comp-table tr:last-child td { border-bottom: none; }
+
+  .comp-table td:last-child {
+    color: var(--white);
+    font-weight: 600;
+    background: rgba(212,196,23,0.03);
+  }
+
+  .comp-table td:first-child {
+    color: #555;
+    position: relative;
+  }
+
+  .comp-table td:first-child::before {
+    content: '✗';
+    color: #444;
+    margin-right: 10px;
+  }
+
+  .comp-table td:last-child::before {
+    content: '✓';
+    color: var(--green);
+    margin-right: 10px;
+  }
+
+  /* ─── MECANISMO ─── */
+  .mecanismo {
+    padding: 80px 0;
+    background: var(--dark);
+  }
+
+  .mec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-top: 50px;
+  }
+
+  .mec-text p {
+    font-size: 17px;
+    color: #aaa;
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+
+  .diferenciais {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .dif-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .dif-item::before {
+    content: '✓';
+    color: var(--green);
+    font-size: 15px;
+    font-weight: 900;
+  }
+
+  .mec-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .mec-step {
+    display: flex;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid #1e1e1e;
+    position: relative;
+  }
+
+  .mec-step:last-child { border-bottom: none; }
+
+  .step-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: #1e1e1e;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 56px;
+  }
+
+  .step-content h4 {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+
+  .step-content p {
+    font-size: 14px;
+    color: #666;
+  }
+
+  /* ─── DEPOIMENTOS ─── */
+  .depoimentos {
+    padding: 80px 0;
+    background: var(--black);
+  }
+
+  .dep-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #1a1a1a;
+    border: 1px solid #1a1a1a;
+    margin-top: 50px;
+  }
+
+  .dep-card {
+    background: var(--dark2);
+    padding: 32px 28px;
+  }
+
+  .dep-stars {
+    color: var(--yellow);
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .dep-text {
+    font-size: 15px;
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .dep-author {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #777;
+    letter-spacing: 1px;
+  }
+
+  /* ─── ANTES / DEPOIS ─── */
+  .antes-depois {
+    padding: 80px 0;
+    background: var(--dark);
+  }
+
+  .ad-visual {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 50px;
+    position: relative;
+  }
+
+  .ad-panel {
+    position: relative;
+    min-height: 280px;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+    overflow: hidden;
+  }
+
+  .ad-panel.antes {
+    background: linear-gradient(135deg, #1a1008 0%, #2a1f0a 100%);
+    border: 1px solid #2a2000;
+  }
+
+  .ad-panel.depois {
+    background: linear-gradient(135deg, #0a1a10 0%, #0f2a1a 100%);
+    border: 1px solid #002a10;
+  }
+
+  .ad-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 2;
+    position: relative;
+  }
+
+  .antes .ad-label { color: #ff6b35; }
+  .depois .ad-label { color: var(--green); }
+
+  .ad-desc {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    right: 24px;
+    z-index: 2;
+  }
+
+  .ad-desc p {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.5;
+  }
+
+  .ad-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--yellow);
+    color: #000;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    z-index: 10;
+    white-space: nowrap;
+  }
+
+  .ad-icon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    opacity: 0.08;
+    pointer-events: none;
+  }
+
+  /* ─── CREDIBILIDADE ─── */
+  .credibilidade {
+    padding: 80px 0;
+    background: var(--black);
+    border-top: 1px solid #1a1a1a;
+  }
+
+  .cred-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: #1a1a1a;
+    border: 1px solid #1a1a1a;
+    margin-top: 50px;
+  }
+
+  .cred-item {
+    background: var(--dark2);
+    padding: 28px 20px;
+    text-align: center;
+  }
+
+  .cred-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+  }
+
+  .cred-item h4 {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--yellow);
+    margin-bottom: 4px;
+  }
+
+  .cred-item p {
+    font-size: 12px;
+    color: #666;
+  }
+
+  /* ─── CALCULADORA ─── */
+  .calculadora {
+    padding: 80px 0;
+    background: var(--dark);
+  }
+
+  .calc-box {
+    max-width: 600px;
+    margin: 50px auto 0;
+    background: var(--dark2);
+    border: 1px solid #2a2a2a;
+    padding: 48px;
+  }
+
+  .calc-box h3 {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .calc-box .sub {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+
+  .calc-input-group {
+    display: flex;
+    gap: 0;
+    margin-bottom: 20px;
+  }
+
+  .calc-input {
+    flex: 1;
+    background: var(--black);
+    border: 1px solid #333;
+    border-right: none;
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 16px 20px;
+    outline: none;
+  }
+
+  .calc-unit {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    color: #666;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .calc-btn {
+    width: 100%;
+    background: var(--yellow);
+    color: #000;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .calc-btn:hover { background: var(--yellow-bright); }
+
+  .calc-result {
+    margin-top: 20px;
+    padding: 20px;
+    background: var(--black);
+    border: 1px solid #2a2a2a;
+    display: none;
+  }
+
+  .calc-result.show { display: block; }
+
+  .calc-result .res-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #666;
+    margin-bottom: 8px;
+  }
+
+  .calc-result .res-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--yellow);
+    margin-bottom: 12px;
+  }
+
+  .calc-result .res-cta {
+    font-size: 14px;
+    color: #aaa;
+  }
+
+  .calc-result .res-cta a {
+    color: var(--yellow);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* ─── FAQ ─── */
+  .faq {
+    padding: 80px 0;
+    background: var(--black);
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: #1a1a1a;
+    border: 1px solid #1a1a1a;
+    margin-top: 50px;
+  }
+
+  .faq-item {
+    background: var(--dark2);
+    padding: 24px 28px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .faq-item:hover { background: #1e1e1e; }
+
+  .faq-q {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .faq-q::before {
+    content: '?';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background: var(--yellow);
+    color: #000;
+    font-size: 12px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .faq-a {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.6;
+    padding-left: 32px;
+  }
+
+  /* ─── GARANTIA ─── */
+  .garantia {
+    padding: 80px 0;
+    background: var(--dark);
+  }
+
+  .garantia-box {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px;
+    align-items: center;
+    background: var(--dark2);
+    border: 1px solid #2a2a2a;
+    padding: 48px;
+  }
+
+  .garantia-icon {
+    font-size: 72px;
+    opacity: 0.8;
+  }
+
+  .garantia-box h3 {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .garantia-box p {
+    font-size: 16px;
+    color: #888;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  /* ─── FECHAMENTO ─── */
+  .fechamento {
+    padding: 100px 0;
+    background: var(--black);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fechamento::before {
+    content: 'DURATEC';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 220px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.015);
+    pointer-events: none;
+    letter-spacing: -10px;
+  }
+
+  .fechamento h2 {
+    font-size: clamp(36px, 5vw, 62px);
+    font-weight: 900;
+    color: var(--white);
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fechamento h2 em {
+    color: var(--yellow);
+    font-style: normal;
+  }
+
+  .fechamento p {
+    font-size: 17px;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .fechamento .btn-primary {
+    font-size: 22px;
+    padding: 20px 48px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ─── STICKY CTA MOBILE ─── */
+  .sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    display: none;
+    flex-direction: column;
+  }
+
+  @media (max-width: 768px) {
+    .sticky-cta { display: flex; }
+  }
+
+  .sticky-cta a {
+    background: var(--yellow);
+    color: #000;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 18px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #080808;
+    border-top: 1px solid #1a1a1a;
+    padding: 40px 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    color: #555;
+    font-size: 13px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.15s;
+  }
+
+  .footer-links a:hover { color: var(--yellow); }
+
+  .footer-copy {
+    font-size: 13px;
+    color: #333;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .apps-grid { grid-template-columns: 1fr 1fr; }
+    .dep-grid { grid-template-columns: 1fr; }
+    .cred-grid { grid-template-columns: repeat(2, 1fr); }
+    .mec-grid { grid-template-columns: 1fr; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .garantia-box { grid-template-columns: 1fr; }
+    .garantia-icon { font-size: 48px; }
+    .comp-table { font-size: 13px; }
+    .comp-table th, .comp-table td { padding: 12px 14px; }
+  }
+
+  @media (max-width: 600px) {
+    .apps-grid { grid-template-columns: 1fr; }
+    .cred-grid { grid-template-columns: 1fr 1fr; }
+    .ad-visual { grid-template-columns: 1fr; }
+    .calc-box { padding: 28px 20px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="inner">
+    <div class="logo">DURA<span>TEC</span></div>
+    <a href="#orcamento" class="cta-nav">Solicitar Orçamento →</a>
+  </div>
+</nav>
+
+<div class="stripe-bar"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-label">Goma Líquida · Base Água · Nanotecnologia</div>
+      <h1>Acabe com<br>infiltrações com<br><em>uma única solução.</em></h1>
+      <p class="hero-sub">A Goma Líquida Duratec cria uma membrana flexível de alta proteção contra água, sol e intempéries — ideal para telhados, paredes, metais, cerâmicas, vidros e mais.</p>
+      <ul class="hero-bullets">
+        <li>Impermeabiliza e protege</li>
+        <li>Alta resistência UV e chuva</li>
+        <li>Múltiplas superfícies</li>
+        <li>Base água, sem odor forte</li>
+        <li>Flexível, lavável e durável</li>
+        <li>Anti mofo e anti bactérias</li>
+      </ul>
+      <div class="cta-group">
+        <a href="#orcamento" class="btn-primary">Solicitar Orçamento →</a>
+        <a href="#calculadora" class="btn-secondary">Calcular quanto preciso</a>
+      </div>
+      <p class="hero-tagline">Mais proteção · Menos retrabalho · Menos manutenção</p>
+    </div>
+    <div class="hero-visual">
+      <div style="background:var(--dark);border-bottom:1px solid #222;padding:12px 16px;text-align:left;margin:-36px -24px 24px;">
+        <span style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#555;">Goma Líquida · 16kg</span>
+      </div>
+      <!-- Produto SVG mockup -->
+      <svg viewBox="0 0 260 280" xmlns="http://www.w3.org/2000/svg" style="width:220px;margin:0 auto;display:block;">
+        <!-- balde corpo -->
+        <ellipse cx="130" cy="60" rx="100" ry="24" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+        <rect x="30" y="60" width="200" height="180" rx="6" fill="#111"/>
+        <ellipse cx="130" cy="240" rx="100" ry="22" fill="#0d0d0d" stroke="#333" stroke-width="1"/>
+        <!-- faixa verde-amarelo base -->
+        <rect x="30" y="190" width="200" height="50" fill="#7ABF2E"/>
+        <ellipse cx="130" cy="240" rx="100" ry="22" fill="#7ABF2E"/>
+        <!-- faixa stripe preta na base -->
+        <rect x="30" y="190" width="200" height="10" fill="#0d0d0d"/>
+        <!-- faixa escura do logo -->
+        <rect x="30" y="80" width="200" height="110" fill="#1a1a1a"/>
+        <!-- stripe amarela topo -->
+        <rect x="30" y="60" width="200" height="20" fill="#D4C417"/>
+        <ellipse cx="130" cy="60" rx="100" ry="24" fill="#D4C417" stroke="#b0a010" stroke-width="1"/>
+        <!-- tampa preta -->
+        <ellipse cx="130" cy="60" rx="80" ry="16" fill="#111" stroke="#333" stroke-width="1"/>
+        <!-- texto DURATEC -->
+        <text x="130" y="115" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="22" fill="#f5f5f0" text-anchor="middle" text-decoration="none">DURATEC</text>
+        <!-- stripe pequena -->
+        <rect x="50" y="120" width="160" height="4" fill="#D4C417" opacity="0.6"/>
+        <!-- texto GOMA LÍQUIDA -->
+        <text x="130" y="148" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="26" fill="#f5f5f0" text-anchor="middle">GOMA</text>
+        <text x="130" y="172" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="26" fill="#f5f5f0" text-anchor="middle">LÍQUIDA</text>
+        <!-- base agua -->
+        <text x="130" y="190" font-family="'Barlow Condensed',sans-serif" font-weight="600" font-size="11" fill="#888" text-anchor="middle">BASE DE ÁGUA</text>
+        <!-- 16kg -->
+        <text x="130" y="228" font-family="'Barlow Condensed',sans-serif" font-weight="900" font-size="20" fill="#000" text-anchor="middle">16KG</text>
+        <!-- alça -->
+        <path d="M 80,60 Q 80,30 130,30 Q 180,30 180,60" stroke="#555" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </svg>
+
+      <div class="specs-row">
+        <div class="spec-item">
+          <div class="label">Acabamento</div>
+          <div class="value">Satinado</div>
+        </div>
+        <div class="spec-item">
+          <div class="label">Secagem</div>
+          <div class="value">72 horas</div>
+        </div>
+        <div class="spec-item">
+          <div class="label">Tecnologia</div>
+          <div class="value">Nano</div>
+        </div>
+        <div class="spec-item">
+          <div class="label">Conteúdo</div>
+          <div class="value">3,6L / 18L</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOCO DOR -->
+<section class="pain">
+  <div class="container">
+    <h2>Infiltração nunca<br>começa <em>cara.</em><br>Ela fica cara.</h2>
+    <p class="pain-intro">O que começa com uma pequena mancha pode se transformar em um problema muito maior — e muito mais caro.</p>
+    <div class="pain-grid">
+      <div class="pain-item">
+        <span class="pain-icon">🎨</span>
+        <p>Pintura descascando e paredes com aspecto deteriorado</p>
+      </div>
+      <div class="pain-item">
+        <span class="pain-icon">🦠</span>
+        <p>Mofo e umidade comprometendo saúde e estrutura</p>
+      </div>
+      <div class="pain-item">
+        <span class="pain-icon">🔩</span>
+        <p>Ferrugem em estruturas metálicas e componentes</p>
+      </div>
+      <div class="pain-item">
+        <span class="pain-icon">📉</span>
+        <p>Desgaste prematuro com retrabalho recorrente</p>
+      </div>
+      <div class="pain-item">
+        <span class="pain-icon">🌡️</span>
+        <p>Desconforto térmico e maior consumo de energia</p>
+      </div>
+      <div class="pain-item">
+        <span class="pain-icon">💸</span>
+        <p>Prejuízo estrutural que só cresce com o tempo</p>
+      </div>
+    </div>
+    <div class="pain-cta">
+      ⚠️ Esperar o problema piorar quase sempre custa muito mais do que prevenir agora.
+    </div>
+  </div>
+</section>
+
+<!-- APLICAÇÕES -->
+<section class="aplicacoes">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Versatilidade</div>
+      <h2>Uma solução para<br><span class="yellow">diferentes superfícies</span></h2>
+    </div>
+    <div class="apps-grid">
+      <div class="app-card">
+        <span class="app-emoji">🏠</span>
+        <h3>Telhados</h3>
+        <p>Proteção total contra infiltração e desgaste climático. Aplicação direta e aderência superior.</p>
+      </div>
+      <div class="app-card">
+        <span class="app-emoji">🧱</span>
+        <h3>Paredes externas</h3>
+        <p>Barreira eficiente contra umidade e ação contínua da chuva e sol.</p>
+      </div>
+      <div class="app-card">
+        <span class="app-emoji">⚙️</span>
+        <h3>Estruturas metálicas</h3>
+        <p>Aplicação direta sobre metal com alta resistência à corrosão e intempéries.</p>
+      </div>
+      <div class="app-card">
+        <span class="app-emoji">🪟</span>
+        <h3>Vidros</h3>
+        <p>Proteção com excelente aderência e acabamento uniforme em superfícies lisas.</p>
+      </div>
+      <div class="app-card">
+        <span class="app-emoji">🏊</span>
+        <h3>Cerâmica e azulejo</h3>
+        <p>Impermeabilização precisa com acabamento uniforme e sem alteração estética.</p>
+      </div>
+      <div class="app-card">
+        <span class="app-emoji">🌲</span>
+        <h3>Madeira</h3>
+        <p>Camada flexível de proteção durável que acompanha a movimentação natural da madeira.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARATIVO -->
+<section class="comparativo">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Comparativo</div>
+      <h2>Por que escolher<br><span class="yellow">Goma Líquida?</span></h2>
+    </div>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>Soluções tradicionais</th>
+          <th>Goma Líquida Duratec</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Proteção apenas superficial</td>
+          <td>Impermeabilização real e durável</td>
+        </tr>
+        <tr>
+          <td>Pode trincar com movimentação</td>
+          <td>Alta flexibilidade e memória elástica</td>
+        </tr>
+        <tr>
+          <td>Menor resistência ao clima</td>
+          <td>Alta resistência UV e às intempéries</td>
+        </tr>
+        <tr>
+          <td>Exige retrabalho frequente</td>
+          <td>Proteção durável, menos manutenção</td>
+        </tr>
+        <tr>
+          <td>Aplicação limitada a poucas superfícies</td>
+          <td>Multi-superfícies: metal, vidro, cerâmica, madeira</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- MECANISMO -->
+<section class="mecanismo">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Como funciona</div>
+      <h2>Tecnologia que<br><span class="yellow">protege de verdade</span></h2>
+    </div>
+    <div class="mec-grid">
+      <div class="mec-text">
+        <p>Ao ser aplicada, a Goma Líquida forma uma membrana impermeabilizante flexível de alta aderência que bloqueia a entrada de água e protege a superfície contra exposição climática e desgaste contínuo.</p>
+        <p>Com nanotecnologia, as partículas penetram profundamente na superfície, criando uma barreira que acompanha as movimentações sem trincar ou descolar.</p>
+        <div class="diferenciais" style="margin-top: 28px;">
+          <div class="dif-item">Nanotecnologia</div>
+          <div class="dif-item">Super flexível</div>
+          <div class="dif-item">Anti mofo</div>
+          <div class="dif-item">Anti bactérias</div>
+          <div class="dif-item">Não tóxico</div>
+          <div class="dif-item">Sem odor forte</div>
+          <div class="dif-item">Lavável</div>
+          <div class="dif-item">Acabamento uniforme</div>
+        </div>
+      </div>
+      <div class="mec-steps">
+        <div class="mec-step">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h4>Prepare a superfície</h4>
+            <p>Limpeza completa e remoção de resíduos, poeira e partes soltas.</p>
+          </div>
+        </div>
+        <div class="mec-step">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h4>Aplique a Goma Líquida</h4>
+            <p>Aplicação uniforme com rolo ou pincel conforme recomendação técnica.</p>
+          </div>
+        </div>
+        <div class="mec-step">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h4>Aguarde a secagem</h4>
+            <p>Secagem estimada em até 72 horas para cura completa da membrana.</p>
+          </div>
+        </div>
+        <div class="mec-step">
+          <div class="step-num">04</div>
+          <div class="step-content">
+            <h4>Superfície protegida</h4>
+            <p>Barreira impermeabilizante ativa e durável contra água, sol e intempéries.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depoimentos">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Prova social</div>
+      <h2>Quem usa,<br><span class="yellow">recomenda.</span></h2>
+    </div>
+    <div class="dep-grid">
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-text">"Aplicamos em uma cobertura com infiltração recorrente há anos e o resultado foi excelente. Sem retrabalho desde então."</p>
+        <div class="dep-author">Ricardo M. — Construtor</div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-text">"Ótima aderência e aplicação simples. Resolveu exatamente o que precisávamos em estrutura metálica exposta ao tempo."</p>
+        <div class="dep-author">Carlos A. — Engenheiro Civil</div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-text">"Produto com excelente acabamento e performance em área externa. Recomendo para qualquer profissional da construção."</p>
+        <div class="dep-author">Fernanda L. — Arquiteta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ANTES/DEPOIS -->
+<section class="antes-depois">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Resultados</div>
+      <h2>Resultado que você<br><span class="yellow">consegue ver.</span></h2>
+    </div>
+    <div class="ad-visual">
+      <div class="ad-panel antes">
+        <div class="ad-desc">
+          <p>Infiltração, trincas, mofo e desgaste contínuo sem proteção adequada.</p>
+        </div>
+        <div class="ad-icon">💧</div>
+        <div class="ad-label">ANTES</div>
+      </div>
+      <div class="ad-panel depois">
+        <div class="ad-desc">
+          <p>Superfície completamente protegida com membrana impermeabilizante durável.</p>
+        </div>
+        <div class="ad-icon">✓</div>
+        <div class="ad-label">DEPOIS</div>
+      </div>
+      <div class="ad-badge">GOMA LÍQUIDA DURATEC</div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDIBILIDADE -->
+<section class="credibilidade">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Performance técnica</div>
+      <h2>Especificações que<br><span class="yellow">geram confiança.</span></h2>
+    </div>
+    <div class="cred-grid">
+      <div class="cred-item">
+        <div class="cred-icon">☀️</div>
+        <h4>Alta Resistência UV</h4>
+        <p>Proteção máxima contra radiação solar</p>
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon">🔬</div>
+        <h4>Nanotecnologia</h4>
+        <p>Penetração profunda e aderência superior</p>
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon">🌊</div>
+        <h4>Base Água</h4>
+        <p>Fórmula sem odor forte, não tóxica</p>
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon">⚡</div>
+        <h4>Direto no Metal</h4>
+        <p>Sem necessidade de preparo especial</p>
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon">🦠</div>
+        <h4>Anti Bactérias</h4>
+        <p>Protege contra proliferação de micro-organismos</p>
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon">🍄</div>
+        <h4>Anti Mofo</h4>
+        <p>Inibe o crescimento de fungos na superfície</p>
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon">⏱️</div>
+        <h4>Secagem 72h</h4>
+        <p>Tempo estimado para cura completa</p>
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon">🎨</div>
+        <h4>6 Cores</h4>
+        <p>Branco, Gris, Gris Plomo, Negro, Rojo, Verde</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <a href="#orcamento" class="btn-secondary">Ver Ficha Técnica</a>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULADORA -->
+<section class="calculadora" id="calculadora">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Calculadora</div>
+      <h2>Descubra quanto<br><span class="yellow">você precisa.</span></h2>
+    </div>
+    <div class="calc-box">
+      <h3>Calcule sua necessidade</h3>
+      <p class="sub">Informe a área total a ser impermeabilizada</p>
+      <div class="calc-input-group">
+        <input type="number" class="calc-input" id="areaInput" placeholder="Ex: 50" min="1">
+        <div class="calc-unit">m²</div>
+      </div>
+      <button class="calc-btn" onclick="calcular()">CALCULAR AGORA →</button>
+      <div class="calc-result" id="calcResult">
+        <div class="res-label">Estimativa para sua área</div>
+        <div class="res-value" id="resValue">—</div>
+        <div class="res-cta">Essa é uma estimativa baseada em cobertura padrão. <a href="#orcamento">Falar com especialista →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Dúvidas frequentes</div>
+      <h2>Perguntas<br><span class="yellow">frequentes.</span></h2>
+    </div>
+    <div class="faq-grid">
+      <div class="faq-item">
+        <div class="faq-q">Serve para metal?</div>
+        <div class="faq-a">Sim. Permite aplicação direta em superfícies metálicas sem necessidade de preparo especial.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Aguenta chuva e sol?</div>
+        <div class="faq-a">Sim. Possui alta resistência climática, proteção UV e foi desenvolvido para uso externo.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Tem cheiro forte?</div>
+        <div class="faq-a">Não. A fórmula é base água, sem odor forte e não tóxica.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Pode usar em área externa?</div>
+        <div class="faq-a">Sim. Desenvolvido especialmente para alta performance em exposição climática constante.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">É tóxico?</div>
+        <div class="faq-a">Não. Fórmula não tóxica, segura para uso residencial e comercial.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">É flexível?</div>
+        <div class="faq-a">Sim. Desenvolvido para acompanhar movimentações da superfície sem trincar ou descolar.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Serve para uso residencial?</div>
+        <div class="faq-a">Sim. Ideal tanto para uso residencial quanto para aplicações comerciais e industriais.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Em quantas demãos aplicar?</div>
+        <div class="faq-a">Geralmente 2 demãos para proteção completa. A equipe técnica pode orientar conforme o caso.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="garantia">
+  <div class="container">
+    <div class="garantia-box">
+      <div class="garantia-icon">🛡️</div>
+      <div>
+        <h3>Compra técnica exige<br>suporte técnico.</h3>
+        <p>Nossa equipe pode orientar a aplicação ideal para o seu cenário e indicar a melhor solução conforme a superfície e a necessidade específica do projeto.</p>
+        <a href="#orcamento" class="btn-primary">Falar com especialista →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FECHAMENTO -->
+<section class="fechamento" id="orcamento">
+  <div class="container">
+    <h2>Quanto mais você espera,<br><em>maior o custo do reparo.</em></h2>
+    <p>Proteja sua estrutura antes que infiltração, umidade e desgaste gerem um prejuízo muito maior. Solicite um orçamento agora.</p>
+    <a href="https://wa.me/5500000000000" class="btn-primary">SOLICITAR ORÇAMENTO →</a>
+    <div style="margin-top:24px;">
+      <a href="https://wa.me/5500000000000" style="color:#555;font-size:13px;text-decoration:none;text-transform:uppercase;letter-spacing:2px;">💬 Ou fale via WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<div class="stripe-bar"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="logo" style="font-size:22px;">DURA<span>TEC</span></div>
+      <div class="footer-links">
+        <a href="#">Ficha Técnica</a>
+        <a href="#">Certificações</a>
+        <a href="#">WhatsApp</a>
+        <a href="#">Política Comercial</a>
+        <a href="#">Contato</a>
+      </div>
+      <div class="footer-copy">© 2024 Duratec. Todos os direitos reservados.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE -->
+<div class="sticky-cta">
+  <a href="https://wa.me/5500000000000">SOLICITAR ORÇAMENTO →</a>
+</div>
+
+<script>
+  function calcular() {
+    const area = parseFloat(document.getElementById('areaInput').value);
+    const result = document.getElementById('calcResult');
+    const resValue = document.getElementById('resValue');
+
+    if (!area || area <= 0) {
+      alert('Por favor, insira uma área válida em m².');
+      return;
+    }
+
+    // ~300g por m² por demão, 2 demãos = 600g/m²
+    const kgNecessario = (area * 0.6).toFixed(1);
+    const baldes18 = Math.ceil((area * 0.6) / 16);
+    const baldes36 = Math.ceil((area * 0.6) / 3.2);
+
+    resValue.textContent = kgNecessario + ' kg de Goma Líquida';
+
+    const extra = result.querySelector('.res-cta');
+    extra.innerHTML = `Equivale a aproximadamente <strong>${baldes18} balde(s) de 18L</strong> ou <strong>${baldes36} lata(s) de 3,6L</strong>.<br><a href="#orcamento">Solicitar orçamento personalizado →</a>`;
+
+    result.classList.add('show');
+  }
+
+  document.getElementById('areaInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') calcular();
+  });
+</script>
+</body>
+</html>
