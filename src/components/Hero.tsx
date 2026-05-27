@@ -78,7 +78,7 @@ const Hero: React.FC = () => {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-accent/5 rounded-full blur-[100px] -z-10" />
             <img
               alt="Balde Duratec Goma Líquida"
-              className="w-full h-auto drop-shadow-2xl animate-float relative z-10 scale-100 md:scale-125"
+              className="w-full h-auto drop-shadow-2xl animate-float relative z-10 scale-100 md:scale-[1.45]"
               src={gomaImg}
             />
           </div>
