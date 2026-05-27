@@ -18,7 +18,7 @@ const pains = [
 const PainBlock: React.FC = () => {
 
   return (
-    <section className="bg-[#0d0d0d] py-section-padding border-t border-[#1e1e1e]">
+    <section className="bg-[#0d0d0d] py-10 md:py-section-padding border-t border-[#1e1e1e]">
       <div className="container-section">
         <h2 className="text-display-section text-industrial-white font-black mb-2.5">
           La infiltración nunca<br />empieza <em className="text-accent not-italic">cara.</em><br />Se vuelve cara.

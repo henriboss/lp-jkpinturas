@@ -25,15 +25,24 @@ const testimonials = [
 
 const Testimonials: React.FC = () => {
   return (
-    <section className="bg-industrial-black py-section-padding">
+    <section className="bg-industrial-black py-10 md:py-section-padding">
       <div className="container-section">
-        <div className="text-center mb-[50px]">
+        <div className="text-center mb-8 md:mb-[50px]">
           <div className="section-label">Prueba social</div>
           <h2 className="text-display-section text-industrial-white font-black mt-3">
             Quien lo usa,<br /><span className="text-accent">lo recomienda.</span>
           </h2>
         </div>
-        <div className="overflow-hidden">
+        <div className="md:hidden grid grid-cols-1 gap-px bg-[#1a1a1a] border border-[#1a1a1a]">
+          {testimonials.map((t, i) => (
+            <div key={i} className="bg-industrial-dark-2 p-5">
+              <div className="text-accent text-base tracking-wider mb-3">★★★★★</div>
+              <p className="text-[15px] text-[#ccc] leading-relaxed mb-4 italic">{t.text}</p>
+              <div className="font-display text-base font-bold uppercase tracking-wider text-[#777]">{t.author}</div>
+            </div>
+          ))}
+        </div>
+        <div className="hidden md:block overflow-hidden">
           <div className="marquee-track">
             {[...testimonials, ...testimonials].map((t, i) => (
               <div key={i} className="w-[380px] shrink-0 bg-industrial-dark-2 p-8 pb-7 mx-[0.5px]">

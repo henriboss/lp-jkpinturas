@@ -13,9 +13,9 @@ const faqs = [
 
 const FAQ: React.FC = () => {
   return (
-    <section className="bg-industrial-black py-section-padding">
+    <section className="bg-industrial-black py-10 md:py-section-padding">
       <div className="container-section">
-        <div className="text-center mb-[50px]">
+        <div className="text-center mb-8 md:mb-[50px]">
           <div className="section-label">Dudas frecuentes</div>
           <h2 className="text-display-section text-industrial-white font-black mt-3">
             Preguntas<br /><span className="text-accent">frecuentes.</span>

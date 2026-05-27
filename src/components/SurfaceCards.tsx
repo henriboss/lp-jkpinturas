@@ -28,9 +28,9 @@ const features = [
 
 const SurfaceCards: React.FC = () => {
   return (
-    <section className="bg-industrial-black py-section-padding">
+    <section className="bg-industrial-black py-10 md:py-section-padding">
       <div className="container-section">
-        <div className="text-center mb-[50px]">
+        <div className="text-center mb-8 md:mb-[50px]">
           <h2 className="text-display-section text-industrial-white font-black">
             Aplicable en<br /><span className="text-accent">múltiples superficies</span>
           </h2>
@@ -42,7 +42,7 @@ const SurfaceCards: React.FC = () => {
               className="bg-industrial-dark-2 border border-outline-variant rounded-sm overflow-hidden relative hover:border-primary transition-colors group scroll-reveal aspect-[3/4]"
             >
               <img src={image} alt={title} className="w-full h-full object-cover absolute inset-0" />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent pt-8 pb-3 px-4">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent pt-4 md:pt-8 pb-3 px-4">
                 <span className="font-display text-sm font-bold uppercase tracking-wider text-industrial-white text-center block leading-tight">
                   {title}
                 </span>

@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-industrial-dark relative overflow-hidden py-[80px] pb-[60px]"
+      className="bg-industrial-dark relative overflow-hidden py-10 md:py-[80px] md:pb-[60px]"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -43,12 +43,12 @@ const Hero: React.FC = () => {
         style={{ zIndex: 0 }}
       />
       <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_80%_50%,rgba(212,196,23,0.07)_0%,transparent_70%)] pointer-events-none" />
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-[60px] items-center max-w-container-max mx-auto px-gutter relative z-10">
-        <div className="hero-content">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-8 lg:gap-[60px] items-center max-w-container-max mx-auto px-gutter relative z-10">
+        <div className="hero-content order-2 lg:order-1">
           <div className="inline-block bg-accent text-on-primary font-display text-xs font-black uppercase tracking-wider px-3 py-1 mb-5">
             Goma Líquida · Base Agua · Nanotecnología
           </div>
-          <h1 className="text-display-hero text-industrial-white mb-3">
+          <h1 className="text-[clamp(32px,8vw,48px)] md:text-display-hero text-industrial-white mb-3">
             Acabe con las<br />infiltraciones con<br /><em className="text-accent not-italic">una única solución.</em>
           </h1>
           <p className="font-body text-body-lg font-semibold text-industrial-white leading-relaxed mb-7 max-w-[520px]">
@@ -62,10 +62,10 @@ const Hero: React.FC = () => {
             ))}
           </ul>
           <div className="flex gap-3.5 flex-wrap items-center">
-            <a href="https://wa.me/595983891601" onClick={handleOrcamento} className="btn-primary bg-accent">
+            <a href="https://wa.me/595983891601" onClick={handleOrcamento} className="btn-primary bg-accent text-sm md:text-base px-4 md:px-8 py-2.5 md:py-4">
               Solicitar Presupuesto →
             </a>
-            <a href="#calculadora" onClick={handleCalculadora} className="btn-secondary">
+            <a href="#calculadora" onClick={handleCalculadora} className="btn-secondary text-sm md:text-base px-4 md:px-8 py-2.5 md:py-3.5">
               Calcular cuánto necesito
             </a>
           </div>
@@ -73,12 +73,12 @@ const Hero: React.FC = () => {
             Más protección · Menos retrabajo · Menos mantenimiento
           </p>
         </div>
-        <div className="flex items-center justify-center hidden lg:flex">
-          <div className="relative w-full max-w-[450px]">
+        <div className="flex items-center justify-center order-1 lg:order-2">
+          <div className="relative w-full max-w-[250px] md:max-w-[450px]">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-accent/5 rounded-full blur-[100px] -z-10" />
             <img
               alt="Balde Duratec Goma Líquida"
-              className="w-full h-auto drop-shadow-2xl animate-float relative z-10 scale-[1.5]"
+              className="w-full h-auto drop-shadow-2xl animate-float relative z-10 scale-100 md:scale-125"
               src={gomaImg}
             />
           </div>

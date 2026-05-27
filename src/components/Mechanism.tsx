@@ -9,15 +9,15 @@ const steps = [
 
 const Mechanism: React.FC = () => {
   return (
-    <section className="bg-industrial-dark py-section-padding">
+    <section className="bg-industrial-dark py-10 md:py-section-padding">
       <div className="container-section">
-        <div className="text-center mb-[50px]">
+        <div className="text-center mb-8 md:mb-[50px]">
           <div className="section-label">Cómo funciona</div>
           <h2 className="text-display-section text-industrial-white font-black mt-3">
             Tecnología que<br /><span className="text-accent">protege de verdad</span>
           </h2>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[60px] items-start mt-[50px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-[60px] items-start mt-8 md:mt-[50px]">
           <div>
             <p className="text-body-lg text-[#aaa] leading-relaxed mb-6">
               Al ser aplicada, la Goma Líquida forma una membrana impermeabilizante flexible de alta adherencia que bloquea la entrada de agua y protege la superficie contra exposición climática y desgaste continuo.
@@ -36,7 +36,7 @@ const Mechanism: React.FC = () => {
           <div className="flex flex-col">
             {steps.map((step) => (
               <div key={step.num} className="flex gap-5 py-6 border-b border-[#1e1e1e] last:border-b-0">
-                <div className="font-display text-[48px] font-black text-[#1e1e1e] leading-none shrink-0 w-14">
+                <div className="font-display text-3xl md:text-[48px] font-black text-[#1e1e1e] leading-none shrink-0 w-10 md:w-14">
                   {step.num}
                 </div>
                 <div>

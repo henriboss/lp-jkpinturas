@@ -17,8 +17,7 @@ const NavBar: React.FC = () => {
           <a
             href="https://wa.me/595983891601"
             onClick={handleCTA}
-            className="bg-accent text-on-primary font-display font-extrabold text-sm uppercase tracking-wider px-5.5 py-2.5 hover:bg-industrial-yellow-bright transition-colors"
-            style={{ padding: '10px 22px', fontSize: '14px', letterSpacing: '1px' }}
+            className="bg-accent text-on-primary font-display font-extrabold text-sm uppercase tracking-wider px-5.5 py-3 hover:bg-industrial-yellow-bright transition-colors"
           >
             Solicitar Presupuesto →
           </a>

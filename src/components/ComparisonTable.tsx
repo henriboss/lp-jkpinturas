@@ -11,38 +11,40 @@ const comparisons = [
 const ComparisonTable: React.FC = () => {
 
   return (
-    <section className="bg-industrial-black py-section-padding">
+    <section className="bg-industrial-black py-10 md:py-section-padding">
       <div className="container-section">
-        <div className="text-center mb-[50px]">
+        <div className="text-center mb-8 md:mb-[50px]">
           <div className="section-label">Comparativo</div>
           <h2 className="text-display-section text-industrial-white font-black mt-3">
             Por qué elegir<br /><span className="text-accent">Goma Líquida?</span>
           </h2>
         </div>
-        <table className="w-full border-collapse font-body">
-          <thead>
-            <tr>
-              <th className="font-display text-xl font-extrabold uppercase text-left py-[18px] px-6 border-b-2 border-[#222]">
-                Soluciones tradicionales
-              </th>
-              <th className="font-display text-xl font-extrabold uppercase text-left py-[18px] px-6 border-b-2 border-primary bg-[rgba(212,196,23,0.05)] text-accent">
-                Goma Líquida Duratec
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {comparisons.map((row, i) => (
-              <tr key={i}>
-                <td className="py-4 px-6 border-b border-[#1a1a1a] text-[15px] text-[#555] before:content-['✗'] before:text-[#444] before:mr-2.5">
-                  {row.traditional}
-                </td>
-                <td className="py-4 px-6 border-b border-[#1a1a1a] text-[15px] text-industrial-white font-semibold bg-[rgba(212,196,23,0.03)] before:content-['✓'] before:text-industrial-green before:mr-2.5">
-                  {row.duratec}
-                </td>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse font-body min-w-[400px]">
+            <thead>
+              <tr>
+                <th className="font-display text-lg md:text-xl font-extrabold uppercase text-left py-3 md:py-[18px] px-4 md:px-6 border-b-2 border-[#222]">
+                  Soluciones tradicionales
+                </th>
+                <th className="font-display text-lg md:text-xl font-extrabold uppercase text-left py-3 md:py-[18px] px-4 md:px-6 border-b-2 border-primary bg-[rgba(212,196,23,0.05)] text-accent">
+                  Goma Líquida Duratec
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {comparisons.map((row, i) => (
+                <tr key={i}>
+                  <td className="py-3 md:py-4 px-4 md:px-6 border-b border-[#1a1a1a] text-[13px] md:text-[15px] text-[#555] before:content-['✗'] before:text-[#444] before:mr-2.5">
+                    {row.traditional}
+                  </td>
+                  <td className="py-3 md:py-4 px-4 md:px-6 border-b border-[#1a1a1a] text-[13px] md:text-[15px] text-industrial-white font-semibold bg-[rgba(212,196,23,0.03)] before:content-['✓'] before:text-industrial-green before:mr-2.5">
+                    {row.duratec}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
   );

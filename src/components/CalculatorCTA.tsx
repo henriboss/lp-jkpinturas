@@ -21,9 +21,9 @@ const CalculatorCTA: React.FC = () => {
   };
 
   return (
-    <section className="bg-industrial-dark py-section-padding" id="calculadora">
+    <section className="bg-industrial-dark py-10 md:py-section-padding" id="calculadora">
       <div className="container-section">
-        <div className="text-center mb-[50px]">
+        <div className="text-center mb-8 md:mb-[50px]">
           <div className="section-label">Calculadora</div>
           <h2 className="text-display-section text-industrial-white font-black mt-3">
             Descubra cuánto<br /><span className="text-accent">necesita.</span>

@@ -7,7 +7,7 @@ const FinalCTA: React.FC = () => {
 
   return (
     <>
-      <section className="bg-industrial-black py-section-padding-lg text-center relative overflow-hidden" id="presupuesto">
+      <section className="bg-industrial-black py-16 md:py-section-padding-lg text-center relative overflow-hidden" id="presupuesto">
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
           <span className="font-display text-[220px] font-black text-[rgba(255,255,255,0.015)] tracking-[-10px]">DURATEC</span>
         </div>
@@ -21,7 +21,7 @@ const FinalCTA: React.FC = () => {
           <a
             href="https://wa.me/595983891601"
             onClick={() => trackWhatsAppClick('final_cta')}
-            className="btn-primary bg-accent text-[22px] py-5 px-12"
+            className="btn-primary bg-accent text-sm md:text-[22px] py-2.5 md:py-5 px-4 md:px-12"
           >
             SOLICITAR PRESUPUESTO →
           </a>
