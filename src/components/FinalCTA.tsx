@@ -13,7 +13,7 @@ const FinalCTA: React.FC = () => {
         </div>
         <div className="container-section relative z-[1]">
           <h2 className="text-display-section text-industrial-white font-black mb-4 max-w-3xl mx-auto">
-            Cuanto más espera,<br /><em className="text-primary not-italic">mayor es el costo de la reparación.</em>
+            Cuanto más espera,<br /><em className="text-accent not-italic">mayor es el costo de la reparación.</em>
           </h2>
           <p className="text-body-lg text-[#666] mb-10 max-w-[560px] mx-auto relative z-[1]">
             Proteja su estructura antes de que la filtración, humedad y desgaste generen un perjuicio mucho mayor. Solicite un presupuesto ahora.
@@ -21,7 +21,7 @@ const FinalCTA: React.FC = () => {
           <a
             href="https://wa.me/595983891601"
             onClick={() => trackWhatsAppClick('final_cta')}
-            className="btn-primary text-[22px] py-5 px-12"
+            className="btn-primary bg-accent text-[22px] py-5 px-12"
           >
             SOLICITAR PRESUPUESTO →
           </a>

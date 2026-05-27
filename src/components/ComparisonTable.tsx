@@ -16,7 +16,7 @@ const ComparisonTable: React.FC = () => {
         <div className="text-center mb-[50px]">
           <div className="section-label">Comparativo</div>
           <h2 className="text-display-section text-industrial-white font-black mt-3">
-            Por qué elegir<br /><span className="text-primary">Goma Líquida?</span>
+            Por qué elegir<br /><span className="text-accent">Goma Líquida?</span>
           </h2>
         </div>
         <table className="w-full border-collapse font-body">
@@ -25,7 +25,7 @@ const ComparisonTable: React.FC = () => {
               <th className="font-display text-xl font-extrabold uppercase text-left py-[18px] px-6 border-b-2 border-[#222]">
                 Soluciones tradicionales
               </th>
-              <th className="font-display text-xl font-extrabold uppercase text-left py-[18px] px-6 border-b-2 border-primary bg-[rgba(212,196,23,0.05)] text-primary">
+              <th className="font-display text-xl font-extrabold uppercase text-left py-[18px] px-6 border-b-2 border-primary bg-[rgba(212,196,23,0.05)] text-accent">
                 Goma Líquida Duratec
               </th>
             </tr>

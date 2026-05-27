@@ -14,6 +14,7 @@ module.exports = {
         "industrial-gray": "#888",
         "industrial-gray-light": "#ccc",
         "primary": "#D4C417",
+        "accent": "#FFB423",
         "on-primary": "#000000",
         "primary-container": "#7ABF2E",
         "secondary": "#7ABF2E",

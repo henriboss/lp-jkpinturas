@@ -21,7 +21,7 @@ const PainBlock: React.FC = () => {
     <section className="bg-[#0d0d0d] py-section-padding border-t border-[#1e1e1e]">
       <div className="container-section">
         <h2 className="text-display-section text-industrial-white font-black mb-2.5">
-          La infiltración nunca<br />empieza <em className="text-primary not-italic">cara.</em><br />Se vuelve cara.
+          La infiltración nunca<br />empieza <em className="text-accent not-italic">cara.</em><br />Se vuelve cara.
         </h2>
         <p className="text-body-lg text-[#888] mb-10 max-w-[560px]">
           Lo que comienza con una pequeña mancha puede convertirse en un problema mucho mayor — y mucho más caro.

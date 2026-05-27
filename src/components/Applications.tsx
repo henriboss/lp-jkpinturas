@@ -22,14 +22,14 @@ const Applications: React.FC = () => {
         <div className="text-center mb-[50px]">
           <div className="section-label">Versatilidad</div>
           <h2 className="text-display-section text-industrial-white font-black mt-3">
-            Una solución para<br /><span className="text-primary">diferentes superficies</span>
+            Una solución para<br /><span className="text-accent">diferentes superficies</span>
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#222] border border-[#222]">
           {apps.map((app) => (
             <div key={app.title} className="bg-industrial-dark-2 p-7 pb-6 relative hover:bg-[#1e1e1e] transition-colors">
               <app.icon className="absolute top-6 right-6" sx={{ fontSize: 28, opacity: 0.4 }} />
-              <div className="w-8 h-0.5 bg-primary mb-4" />
+              <div className="w-8 h-0.5 bg-accent mb-4" />
               <h3 className="text-heading-card text-industrial-white font-extrabold mb-2">{app.title}</h3>
               <p className="text-body-sm text-[#888] leading-relaxed">{app.desc}</p>
             </div>

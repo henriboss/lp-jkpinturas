@@ -26,7 +26,7 @@ const CalculatorCTA: React.FC = () => {
         <div className="text-center mb-[50px]">
           <div className="section-label">Calculadora</div>
           <h2 className="text-display-section text-industrial-white font-black mt-3">
-            Descubra cuánto<br /><span className="text-primary">necesita.</span>
+            Descubra cuánto<br /><span className="text-accent">necesita.</span>
           </h2>
         </div>
         <div className="max-w-[600px] mx-auto bg-industrial-dark-2 border border-[#2a2a2a] p-6 md:p-12">
@@ -44,16 +44,16 @@ const CalculatorCTA: React.FC = () => {
             />
             <div className="bg-[#1e1e1e] border border-[#333] text-[#666] font-display text-base font-bold px-5 py-4 uppercase tracking-wider">m²</div>
           </div>
-          <button onClick={calcular} className="w-full bg-primary text-on-primary font-display font-black text-xl uppercase tracking-wider py-4 hover:bg-industrial-yellow-bright transition-colors border-none cursor-pointer">
+          <button onClick={calcular} className="w-full bg-accent text-on-primary font-display font-black text-xl uppercase tracking-wider py-4 hover:bg-industrial-yellow-bright transition-colors border-none cursor-pointer">
             CALCULAR AHORA →
           </button>
           {result && (
             <div className="mt-5 p-5 bg-industrial-black border border-[#2a2a2a]">
               <div className="text-xs uppercase tracking-wider text-[#666] mb-2">Estimación para su área</div>
-              <div className="font-display text-4xl font-black text-primary mb-3">{result.kg} kg de Goma Líquida</div>
+              <div className="font-display text-4xl font-black text-accent mb-3">{result.kg} kg de Goma Líquida</div>
               <div className="text-sm text-[#aaa]">
                 Equivale a aproximadamente <strong>{result.baldes18} balde(s) de 18L</strong> o <strong>{result.baldes36} lata(s) de 3,6L</strong>.<br />
-                <a href="https://wa.me/595983891601" className="text-primary font-semibold no-underline">Solicitar presupuesto personalizado →</a>
+                <a href="https://wa.me/595983891601" className="text-accent font-semibold no-underline">Solicitar presupuesto personalizado →</a>
               </div>
             </div>
           )}

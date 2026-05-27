@@ -18,13 +18,13 @@ const FAQ: React.FC = () => {
         <div className="text-center mb-[50px]">
           <div className="section-label">Dudas frecuentes</div>
           <h2 className="text-display-section text-industrial-white font-black mt-3">
-            Preguntas<br /><span className="text-primary">frecuentes.</span>
+            Preguntas<br /><span className="text-accent">frecuentes.</span>
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1a1a1a] border border-[#1a1a1a]">
           {faqs.map((faq) => (
             <div key={faq.q} className="bg-industrial-dark-2 p-6 pb-5 cursor-pointer hover:bg-[#1e1e1e] transition-colors">
-              <div className="font-display text-lg font-bold text-industrial-white mb-2 flex items-center gap-2.5 before:content-['?'] before:inline-flex before:items-center before:justify-center before:w-[22px] before:h-[22px] before:bg-primary before:text-on-primary before:text-xs before:font-black before:shrink-0">
+              <div className="font-display text-lg font-bold text-industrial-white mb-2 flex items-center gap-2.5 before:content-['?'] before:inline-flex before:items-center before:justify-center before:w-[22px] before:h-[22px] before:bg-accent before:text-on-primary before:text-xs before:font-black before:shrink-0">
                 {faq.q}
               </div>
               <div className="text-body-sm text-[#777] leading-relaxed pl-8">{faq.a}</div>

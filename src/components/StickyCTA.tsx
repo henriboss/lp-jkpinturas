@@ -9,7 +9,7 @@ const StickyCTA: React.FC = () => {
       <a
         href="https://wa.me/595983891601"
         onClick={() => trackWhatsAppClick('sticky_mobile')}
-        className="bg-primary text-on-primary text-center font-display font-black text-lg uppercase tracking-wider py-[18px] no-underline block"
+        className="bg-accent text-on-primary text-center font-display font-black text-lg uppercase tracking-wider py-[18px] no-underline block"
       >
         SOLICITAR PRESUPUESTO →
       </a>

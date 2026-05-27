@@ -66,18 +66,9 @@ export const useGrapheneCanvas = (canvasRef: React.RefObject<HTMLCanvasElement |
     }
     ctx.closePath();
 
-    const grayValue = 100 + (alpha * 80);
-    const strokeColor = `rgba(${grayValue}, ${grayValue}, ${grayValue + 10}, ${alpha})`;
-    ctx.strokeStyle = strokeColor;
+    ctx.strokeStyle = `rgba(0, 0, 0, ${alpha})`;
     ctx.lineWidth = 1.5;
     ctx.stroke();
-
-    if (alpha > 0.5) {
-      ctx.shadowColor = `rgba(${grayValue}, ${grayValue}, ${grayValue + 10}, ${alpha * 0.8})`;
-      ctx.shadowBlur = 8 * alpha;
-      ctx.stroke();
-      ctx.shadowBlur = 0;
-    }
   }, []);
 
   const animate = useCallback(() => {

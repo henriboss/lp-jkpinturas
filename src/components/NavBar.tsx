@@ -1,5 +1,6 @@
 import React from 'react';
 import { useGTMEvent } from '../hooks/useGTMEvent';
+import logoImg from '../assets/logo/Logo-1.png';
 
 const NavBar: React.FC = () => {
   const { trackWhatsAppClick } = useGTMEvent();
@@ -12,13 +13,11 @@ const NavBar: React.FC = () => {
     <>
       <nav className="bg-industrial-black border-b border-[#222] sticky top-0 z-50">
         <div className="max-w-container-max mx-auto px-gutter flex items-center justify-between py-3.5">
-          <div className="font-display text-[28px] font-black uppercase tracking-wider text-industrial-white">
-            DURA<span className="text-primary">TEC</span>
-          </div>
+          <img src={logoImg} alt="Duratec" className="h-8 w-auto" />
           <a
             href="https://wa.me/595983891601"
             onClick={handleCTA}
-            className="bg-primary text-on-primary font-display font-extrabold text-sm uppercase tracking-wider px-5.5 py-2.5 hover:bg-industrial-yellow-bright transition-colors"
+            className="bg-accent text-on-primary font-display font-extrabold text-sm uppercase tracking-wider px-5.5 py-2.5 hover:bg-industrial-yellow-bright transition-colors"
             style={{ padding: '10px 22px', fontSize: '14px', letterSpacing: '1px' }}
           >
             Solicitar Presupuesto →

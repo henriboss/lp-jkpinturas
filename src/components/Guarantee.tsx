@@ -15,7 +15,7 @@ const Guarantee: React.FC = () => {
             <p className="text-body-md text-[#888] leading-relaxed mb-6">
               Nuestro equipo puede orientar la aplicación ideal para su escenario e indicar la mejor solución según la superficie y la necesidad específica del proyecto.
             </p>
-            <a href="https://wa.me/595983891601" onClick={() => trackWhatsAppClick('guarantee')} className="btn-primary">
+            <a href="https://wa.me/595983891601" onClick={() => trackWhatsAppClick('guarantee')} className="btn-primary bg-accent">
               Hablar con especialista →
             </a>
           </div>

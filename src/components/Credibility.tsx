@@ -26,14 +26,14 @@ const Credibility: React.FC = () => {
         <div className="text-center mb-[50px]">
           <div className="section-label">Performance técnica</div>
           <h2 className="text-display-section text-industrial-white font-black mt-3">
-            Especificaciones que<br /><span className="text-primary">generan confianza.</span>
+            Especificaciones que<br /><span className="text-accent">generan confianza.</span>
           </h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#1a1a1a] border border-[#1a1a1a]">
           {items.map((item) => (
             <div key={item.title} className="bg-industrial-dark-2 p-7 pb-5 text-center">
               <div className="mb-2.5"><item.icon sx={{ fontSize: 32 }} /></div>
-              <h4 className="font-display text-base font-extrabold text-primary mb-1">{item.title}</h4>
+              <h4 className="font-display text-base font-extrabold text-accent mb-1">{item.title}</h4>
               <p className="text-xs text-[#666]">{item.desc}</p>
             </div>
           ))}

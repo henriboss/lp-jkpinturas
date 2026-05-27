@@ -14,7 +14,7 @@ const Mechanism: React.FC = () => {
         <div className="text-center mb-[50px]">
           <div className="section-label">Cómo funciona</div>
           <h2 className="text-display-section text-industrial-white font-black mt-3">
-            Tecnología que<br /><span className="text-primary">protege de verdad</span>
+            Tecnología que<br /><span className="text-accent">protege de verdad</span>
           </h2>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[60px] items-start mt-[50px]">

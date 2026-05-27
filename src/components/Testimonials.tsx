@@ -30,14 +30,14 @@ const Testimonials: React.FC = () => {
         <div className="text-center mb-[50px]">
           <div className="section-label">Prueba social</div>
           <h2 className="text-display-section text-industrial-white font-black mt-3">
-            Quien lo usa,<br /><span className="text-primary">lo recomienda.</span>
+            Quien lo usa,<br /><span className="text-accent">lo recomienda.</span>
           </h2>
         </div>
         <div className="overflow-hidden">
           <div className="marquee-track">
             {[...testimonials, ...testimonials].map((t, i) => (
               <div key={i} className="w-[380px] shrink-0 bg-industrial-dark-2 p-8 pb-7 mx-[0.5px]">
-                <div className="text-primary text-base tracking-wider mb-4">★★★★★</div>
+                <div className="text-accent text-base tracking-wider mb-4">★★★★★</div>
                 <p className="text-[15px] text-[#ccc] leading-relaxed mb-5 italic">{t.text}</p>
                 <div className="font-display text-base font-bold uppercase tracking-wider text-[#777]">{t.author}</div>
               </div>

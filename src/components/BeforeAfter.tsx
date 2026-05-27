@@ -9,7 +9,7 @@ const BeforeAfter: React.FC = () => {
         <div className="text-center mb-[50px]">
           <div className="section-label">Resultados</div>
           <h2 className="text-display-section text-industrial-white font-black mt-3">
-            Resultado que usted<br /><span className="text-primary">puede ver.</span>
+            Resultado que usted<br /><span className="text-accent">puede ver.</span>
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px mt-[50px] relative">
@@ -31,7 +31,7 @@ const BeforeAfter: React.FC = () => {
             </div>
             <div className="font-display text-[32px] font-black uppercase tracking-wider text-industrial-green z-[2] relative">DESPUÉS</div>
           </div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-on-primary font-display text-sm font-black uppercase px-4 py-2 z-10 whitespace-nowrap">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent text-on-primary font-display text-sm font-black uppercase px-4 py-2 z-10 whitespace-nowrap">
             GOMA LÍQUIDA DURATEC
           </div>
         </div>

@@ -4,6 +4,7 @@ import { useGTMEvent } from './hooks/useGTMEvent';
 import { useScrollDepth } from './hooks/useScrollDepth';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
+import SurfaceCards from './components/SurfaceCards';
 import PainBlock from './components/PainBlock';
 import Applications from './components/Applications';
 import ComparisonTable from './components/ComparisonTable';
@@ -65,6 +66,7 @@ function App() {
       <NavBar />
       <main>
         <Hero />
+        <SurfaceCards />
         <PainBlock />
         <Applications />
         <ComparisonTable />
