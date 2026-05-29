@@ -1,6 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import antesImg from '../assets/after-before/img-1.png';
 import depoisImg from '../assets/after-before/img-2.png';
+import antesImgWebp from '../assets/after-before/img-1.webp';
+import depoisImgWebp from '../assets/after-before/img-2.webp';
 
 const BeforeAfter: React.FC = () => {
   const [sliderPos, setSliderPos] = useState(0);
@@ -61,20 +63,26 @@ const BeforeAfter: React.FC = () => {
           onMouseDown={startDrag}
           onTouchStart={startDrag}
         >
-          <img
-            src={antesImg}
-            alt="Antes"
-            className="absolute inset-0 w-full h-full object-cover"
-            draggable={false}
-          />
+          <picture>
+            <source srcSet={antesImgWebp} type="image/webp" />
+            <img
+              src={antesImg}
+              alt="Antes"
+              className="absolute inset-0 w-full h-full object-cover"
+              draggable={false}
+            />
+          </picture>
 
-          <img
-            src={depoisImg}
-            alt="Depois"
-            className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-            style={{ clipPath: `polygon(0 0, ${sliderPos}% 0, ${sliderPos}% 100%, 0 100%)` }}
-            draggable={false}
-          />
+          <picture>
+            <source srcSet={depoisImgWebp} type="image/webp" />
+            <img
+              src={depoisImg}
+              alt="Depois"
+              className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+              style={{ clipPath: `polygon(0 0, ${sliderPos}% 0, ${sliderPos}% 100%, 0 100%)` }}
+              draggable={false}
+            />
+          </picture>
 
           {/* Handle */}
           <div

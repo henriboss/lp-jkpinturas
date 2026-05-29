@@ -3,6 +3,8 @@ import { useGrapheneCanvas } from '../hooks/useGrapheneCanvas';
 import { useGTMEvent } from '../hooks/useGTMEvent';
 import gomaImg from '../assets/product-original.png';
 import bgImg from '../assets/bgs/bg-1.png';
+import gomaImgWebp from '../assets/product-original.webp';
+import bgImgWebp from '../assets/bgs/bg-1.webp';
 
 const Hero: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -36,7 +38,10 @@ const Hero: React.FC = () => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <img src={bgImg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.6] pointer-events-none" />
+      <picture>
+        <source srcSet={bgImgWebp} type="image/webp" />
+        <img src={bgImg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.6] pointer-events-none" />
+      </picture>
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full pointer-events-none"
@@ -76,11 +81,14 @@ const Hero: React.FC = () => {
         <div className="flex items-center justify-center order-1 lg:order-2">
           <div className="relative w-full max-w-[250px] md:max-w-[450px]">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-accent/5 rounded-full blur-[100px] -z-10" />
-            <img
-              alt="Balde Duratec Goma Líquida"
-              className="w-full h-auto drop-shadow-2xl animate-float relative z-10 scale-100 md:scale-[1.45]"
-              src={gomaImg}
-            />
+            <picture>
+              <source srcSet={gomaImgWebp} type="image/webp" />
+              <img
+                alt="Balde Duratec Goma Líquida"
+                className="w-full h-auto drop-shadow-2xl animate-float relative z-10 scale-100 md:scale-[1.45]"
+                src={gomaImg}
+              />
+            </picture>
           </div>
         </div>
       </div>

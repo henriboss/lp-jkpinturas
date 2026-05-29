@@ -9,14 +9,20 @@ import img3 from '../assets/img-3.png';
 import img4 from '../assets/img-4.png';
 import img5 from '../assets/img-5.png';
 import img6 from '../assets/img-6.png';
+import img1Webp from '../assets/img-1.webp';
+import img2Webp from '../assets/img-2.webp';
+import img3Webp from '../assets/img-3.webp';
+import img4Webp from '../assets/img-4.webp';
+import img5Webp from '../assets/img-5.webp';
+import img6Webp from '../assets/img-6.webp';
 
 const surfaces = [
-  { title: 'Concreto', image: img1 },
-  { title: 'Metal', image: img2 },
-  { title: 'Tejas', image: img3 },
-  { title: 'Azulejos', image: img4 },
-  { title: 'Vidrio', image: img5 },
-  { title: 'Madera', image: img6 },
+  { title: 'Concreto', image: img1, imageWebp: img1Webp },
+  { title: 'Metal', image: img2, imageWebp: img2Webp },
+  { title: 'Tejas', image: img3, imageWebp: img3Webp },
+  { title: 'Azulejos', image: img4, imageWebp: img4Webp },
+  { title: 'Vidrio', image: img5, imageWebp: img5Webp },
+  { title: 'Madera', image: img6, imageWebp: img6Webp },
 ];
 
 const features = [
@@ -36,12 +42,15 @@ const SurfaceCards: React.FC = () => {
           </h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {surfaces.map(({ title, image }) => (
+          {surfaces.map(({ title, image, imageWebp }) => (
             <div
               key={title}
               className="bg-industrial-dark-2 border border-outline-variant rounded-sm overflow-hidden relative hover:border-primary transition-colors group scroll-reveal aspect-[3/4]"
             >
-              <img src={image} alt={title} className="w-full h-full object-cover absolute inset-0" />
+              <picture>
+                <source srcSet={imageWebp} type="image/webp" />
+                <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover" />
+              </picture>
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent pt-4 md:pt-8 pb-3 px-4">
                 <span className="font-display text-sm font-bold uppercase tracking-wider text-industrial-white text-center block leading-tight">
                   {title}
